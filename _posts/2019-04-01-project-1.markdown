@@ -1,0 +1,12 @@
+---
+layout: default
+modal-id: 1
+date: 2019-04-01
+img: pythondev.png
+alt: image-alt
+project-date: April 2019
+client: Private
+category: Python Development
+description: Python Development
+
+---
