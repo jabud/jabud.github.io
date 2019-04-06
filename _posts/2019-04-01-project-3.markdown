@@ -7,6 +7,7 @@ alt: image-alt
 project-date: April 2019
 client: Private
 category: Machine Learning
-description: Machine Learning
+title: Machine Learning
+description: I apply mathematics and statistics to analyze data, squiz it and derive insights from it, then I create intuitive visualizations. Sometimes problems require more sophisticated techniques, like machine learning models to predict or classify data. I have experience working with models related to computer vision and natural language processing.
 
 ---

@@ -7,6 +7,7 @@ alt: image-alt
 project-date: April 2019
 client: Private
 category: Web Scraping
-description: Web Scraping
+title: Web Scraping
+description: I create little naughty robots that like to go into websites and extract their information. Then I process and format the data so that it goes with a useful structure into a database, For that we need data pipelines and a good database design. After that you can work more comfortably with all that information.
 
 ---
