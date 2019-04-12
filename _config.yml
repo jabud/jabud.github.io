@@ -1,10 +1,10 @@
 # Site settings
-title: Jorge Espinoza
-email: jorge@misfitslab.com
-url: https://jabud.tech
+title: jabud.tech
+email: jorge@misfitslab.net
+url: http://jabud.tech
 description: "Hi, my name is Jorge Espinoza and I solve problems using math, code and data."
 keywords: "freelance, freelancer, machine learning, data scientist, web scraping, data engineer, big data, analytics"
-skills: "Python Developer - Data Scientist - Data Engineer"
+skills: "Data Scientist - Data Engineer - Python Developer"
 meta_author: Jorge Espinoza
 
 # Google webmaster tools
