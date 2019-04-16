@@ -10,6 +10,9 @@ meta_author: Jorge Espinoza
 # Google webmaster tools
 google_verify:
 
+# Google Analytics
+google_analytics: UA-138335771-1
+
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
