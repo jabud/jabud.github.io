@@ -5334,7 +5334,7 @@ ul.flexbox {
 
 @media (max-width: 991px) {
   .topbar-expand-md.topbar-inverse .topbar-nav > .nav-item > .nav-link {
-    color: #535353;
+    color: #fff;
   }
   .topbar-expand-md .topbar-nav {
     -webkit-box-orient: vertical;
