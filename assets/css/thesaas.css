@@ -4199,7 +4199,7 @@ textarea.form-control-sm {
   right: 0;
   bottom: 0;
   border: 1px solid #fff;
-  opacity: 0;
+  opacity: 0.5;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   z-index: 2;
@@ -4239,7 +4239,7 @@ textarea.form-control-sm {
   text-align: center;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  opacity: 0;
+  opacity: 0.8;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
