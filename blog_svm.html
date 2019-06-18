@@ -89,10 +89,10 @@
 
 
     <!-- Header -->
-    <header class="header header-inverse h-fullscreen pb-80 hidden-sm-down" style="background-image: url(assets/img/svm.png);" data-overlay="5">
+    <header class="header header-inverse h-fullscreen pb-80 hidden-sm-down" style="background-image: url(assets/img/svm/svm.png);" data-overlay="5">
     </header>
 
-    <header class="header header-inverse w-fullscreen hidden-md-up py-150" style="background-image: url(assets/img/svm.png);" data-overlay="5">
+    <header class="header header-inverse w-fullscreen hidden-md-up py-150" style="background-image: url(assets/img/svm/svm.png);" data-overlay="5">
     </header>
     <!-- END Header -->
 
@@ -122,8 +122,8 @@
               <p class="lead">Some typical use cases are facial recognition, it is used to classify text, images and in the field of bioinformatics.</p>
               <p class="lead">This algorithm was actually the state of the art solution before neural networks came around.</p>
               <p class="lead">The intuitive explanation is as following…</p>
-              <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Figure 1</cite></footer>
+              <p><img src="assets/img/svm/svm_intuitive.png" alt="..."></p>
+              <footer style="text-align:center"><cite title="Source Title">Figure 1</cite></footer>
               <br>
               <p class="lead">if we have data that looks like figure 1, SVM is basically trying to draw a line between the two groups and divide in two classes. We set as 1 everything above the upper line and -1 below the lower line. Anything in between those lines we call it 0 or unclassified.</p>
             </div>            
@@ -132,22 +132,22 @@
           <div class="row gap-y">
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card">
-                <p><img src="assets/img/e3e4.gif" alt="..."></p>
-                <footer><cite title="Source Title">Figure 2</cite></footer>
+                <p><img src="assets/img/svm/line1.png" alt="..."></p>
+                <footer style="text-align:center"><cite title="Source Title">Figure 2: first attempt</cite></footer>
               </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card">
-                <p><img src="assets/img/e3e4.gif" alt="..."></p>
-                <footer><cite title="Source Title">Figure 3</cite></footer>
+                <p><img src="assets/img/svm/line2.png" alt="..."></p>
+                <footer style="text-align:center"><cite title="Source Title">Figure 3: second attempt</cite></footer>
               </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card">
-                <p><img src="assets/img/e3e4.gif" alt="..."></p>
-                <footer><cite title="Source Title">Figure 4</cite></footer>
+                <p><img src="assets/img/svm/model_confused.png" alt="..."></p>
+                <footer style="text-align:center"><cite title="Source Title">Figure 4: unclassified data</cite></footer>
               </div>
             </div>
             <br>
@@ -161,11 +161,13 @@
 
               <h2>Restrictions</h2>
               <p class="lead">We are going to need 3 basic lines, they will divide our space in 3 areas.</p>
-              <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Figure </cite></footer>
+              <p><img src="assets/img/svm/restrictions.png" alt="..."></p>
+              <footer style="text-align:center"><cite title="Source Title">Figure 5: Restrictions</cite></footer>
               <br>
               <p class="lead">The lines are described by these equations:</p>
-              <p class="lead" style="text-align:center">`w^T·x+b>=1`,  `w^T·x+b=0`,  `w^T·x+b<=-1`</p>
+              <p class="lead" style="text-align:center">`w^T·x+b>=1`,</p>
+              <p class="lead" style="text-align:center">`w^T·x+b=0`,</p>
+              <p class="lead" style="text-align:center">`w^T·x+b<=-1`</p>
               <p class="lead">And as you can see in figure 6, our space is divided in3 parts, each part will label the data as 1, -1 and 0 in the center.</p>
               <p class="lead">So far so good, the real trick is in finding those 3 lines and for that, the first step is to use a mathematical convenience:</p>
               <p class="lead" style="text-align:center">`{(y_i=1 -> Class 1), (y_i = -1 -> Class 2):}`</p>
@@ -200,9 +202,9 @@
               <h2>Optimization</h2>
               <p class="lead">The next step is to check pairs of vectors from both classes, propose sidewalks and check how wide they are, the algorithm does this a few times until the right vectors are found, but right now let’s focus only on how we find the distance between those vectors.</p>
               <p class="lead">I guess it's obvious the the first step is to find the difference between both vectors `(vec v_1 - vec v_2)`. The result will be a new vector `vec v_d` that will get close to be the distance we are looking for but not quite.</p>
-              <p class="lead">Now, imagine we set a new vector `vec w_u` perpendicular to the line marked by `vec v_2` and this particular vector is aunitary one. If we take the dot product of such vector `vec w_u` with `(vec v_1 - vec v_2)` we would get the wide of the street. We can see in figure X, my attempt to describe this more intuitively.</p>
-              <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Figure X</cite></footer>
+              <p class="lead">Now, imagine we set a new vector `vec w_u` perpendicular to the line marked by `vec v_2` and this particular vector is aunitary one. If we take the dot product of such vector `vec w_u` with `(vec v_1 - vec v_2)` we would get the wide of the street. We can see in figure 6, my attempt to describe this more intuitively.</p>
+              <p style="text-align:center"><img src="assets/img/svm/widestreet.png" alt="..."></p>
+              <footer style="text-align:center"><cite title="Source Title">Figure 6</cite></footer>
               <br>
               <p class="lead">Good. Now we have `(vec v_1 - vec v_2)·vec w_u = ` Width of Street.</p>
               <p class="lead">Another way to write a unitary vector is like this: `vec w_u = vec w/norm(vec w)`. This is basically taking away from the vector all its amplitude, leaving only the basis multiplied by an amplitude of one.</p>
@@ -256,18 +258,26 @@
               <p class="lead">And this particular equation is telling us all. We check our restrictions and search for the widest street by taking pairs of vectors, one for each class until we find the right support vectors.</p>
 
               <h2>Kernels</h2>
-              <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Figure X</cite></footer>
+              <p><img src="assets/img/svm/kernels.png" alt="..."></p>
+              <footer style="text-align:center"><cite title="Source Title">Figure 7. Non-linearly separable data</cite></footer>
               <br>
-              <p class="lead">So far we have discussed datasets with the characteristic of being leniearly separable. But what happens when that is not the case? should we give up? should we use another method? should we leave the building and run for our lives?</p>
+              <p class="lead">So far we have discussed datasets with the characteristic of being leniearly separable. But what happens when that is not the case?, should we give up?, should we use another method?, should we leave the building and run for our lives?</p>
               <p class="lead">The answer is... try with Kernels.</p>
               <p class="lead">Kernels are a great way to transform data into a new dimension and sometimes we are lucky enough to find a linearly separable plane.</p>
               <p class="lead">I'll leave you with 2 examples of kernels, enjoy.</p>
-                            <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Figure X</cite></footer>
+              <p>
+                <video controls loop>
+                  <source src="assets/video/kernel1.mp4" type="video/mp4">
+                </video>
+              </p>
+              <footer style="text-align:center"><cite title="Source Title">Kernel 1</cite></footer>
               <br>
-              <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Figure X</cite></footer>
+              <p>
+                <video controls loop>
+                  <source src="assets/video/kernel2.mp4" type="video/mp4">
+                </video>
+              </p>
+              <footer style="text-align:center"><cite title="Source Title">Kernel 2</cite></footer>
               <br>
 
               <h2>References</h2>

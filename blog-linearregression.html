@@ -85,10 +85,10 @@
 
 
     <!-- Header -->
-    <header class="header header-inverse h-fullscreen pb-80 hidden-sm-down" style="background-image: url(assets/img/linear_regression_wall.png);" data-overlay="5">
+    <header class="header header-inverse h-fullscreen pb-80 hidden-sm-down" style="background-image: url(assets/img/linear_regression/linear_regression_wall.png);" data-overlay="5">
     </header>
 
-    <header class="header header-inverse w-fullscreen hidden-md-up py-150" style="background-image: url(assets/img/linear_regression_wall.png);" data-overlay="5">
+    <header class="header header-inverse w-fullscreen hidden-md-up py-150" style="background-image: url(assets/img/linear_regression/linear_regression_wall.png);" data-overlay="5">
     </header>
     <!-- END Header -->
 
@@ -133,23 +133,23 @@
 
               <p class="lead">The goal of least squares is to find the line that fits our data best.</p>
               <p class="lead">Taking as an example the latitude of the position of a planet and 6 days in which we recorded the information, we can easily see a pattern, a tendency and we can draw a line using it as our first model.</p>
-              <p><img src="assets/img/line.png" alt="..."></p>
+              <p><img src="assets/img/linear_regression/line.png" alt="..."></p>
               <!-- <footer><cite title="Source Title"></cite></footer> -->
               <br>
               <p class="lead">Let’s say that line makes a good job, now how do we know it is the best line? well, to answer that we need to compare the difference between our observations and the estimation of our model, following the method of least squares.</p>
 
               <h4>Error Equation</h4>
-              <p><img src="assets/img/error_eq.gif" alt="..."></p>
+              <p><img src="assets/img/linear_regression/error_eq.gif" alt="..."></p>
               <!-- <footer><cite title="Source Title"></cite></footer> -->
               <br>
               <p class="lead">The method of least squares and its steps are described by this equation, the error equation.</p>
               <p class="lead">As you probably noticed already the equation of a line is embedded in the expression as pred (as in prediction).</p>
               <p class="lead">So the first step is to calculate the difference between our line and our observations.</p>
-              <p><img src="assets/img/e1.gif" alt="..."></p>
+              <p><img src="assets/img/linear_regression/e1.gif" alt="..."></p>
               <footer><cite title="Source Title">Calculate differences</cite></footer>
               <br>
               <p class="lead">Then we square the values.</p>
-              <p><img src="assets/img/e2.gif" alt="..."></p>
+              <p><img src="assets/img/linear_regression/e2.gif" alt="..."></p>
               <footer><cite title="Source Title">Errors squared</cite></footer>
               <br>
               <p class="lead">Some important observations need to be addressed, we square the distances for two reasons:</p>
@@ -163,17 +163,17 @@
 
               <h4>Partial derivatives</h4>
               <p class="lead">Partial derivatives are excellent to calculate how a function, depending of several variables, changes with respect to one of them, leaving the other ones constant. A crucial feature of partial derivatives is that they are equal to 0 on the maximum and minimum points of a function.</p>
-              <p><img src="assets/img/partialderivative.gif" alt="..."></p>
+              <p><img src="assets/img/linear_regression/partialderivative.gif" alt="..."></p>
               <!-- <footer><cite title="Source Title"></cite></footer> -->
               <br>
               <p class="lead">In the animation above we have the cost function or the error function and we are looking for the minimum point. A partial derivative tells us the rate of change at each point of the function, hence if we look at the left side of the graph we can see the rate of change is negative, the value of y decreases while we move forward in x, on the right side, the opposite happens, the values of y increases with respect to x, therefore it is logical to think that there must be a point between those changes from negative to positive, where the value goes through 0, and it’s right there where the minimum value resides, where the rate of change or where the derivative is equal to 0.</p>
               <p class="lead">Great, so the next step is compute the partial derivatives of our error function and set the result to 0, to put everything in terms of the minimum value of the error. we will take the derivatives with respect to m and b, since they are the values we are interested in.</p>
-              <p><img src="assets/img/der_solution.png" alt="..."></p>
+              <p><img src="assets/img/linear_regression/der_solution.png" alt="..."></p>
               <!-- <footer><cite title="Source Title"></cite></footer> -->
               <br>
               <p class="lead">piece of cake.</p>
               <p class="lead">Having done all of the steps above and estimating the values of slope and intercept of our model, we are more than ready to predict the latitude of the planet for the next day.</p>
-              <p><img src="assets/img/e3e4.gif" alt="..."></p>
+              <p><img src="assets/img/linear_regression/e3e4.gif" alt="..."></p>
               <footer><cite title="Source Title">Predicting the future!</cite></footer>
               <br>
               <p class="lead">¡voila!</p>
