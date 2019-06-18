@@ -122,72 +122,143 @@
               <p class="lead">Some typical use cases are facial recognition, it is used to classify text, images and in the field of bioinformatics.</p>
               <p class="lead">This algorithm was actually the state of the art solution before neural networks came around.</p>
               <p class="lead">The intuitive explanation is as following…</p>
-              <p class="lead">if we have data that looks like figure 1, SVM is basically trying to draw a line between the two groups and divide in two classes. We set as 1 everything above the upper line and -1 below the lower line. Anything in between those lines we call it 0 or unclassified.</p>
-              
-              <p class="lead">When $$a \ne 0$$, there are two solutions to \(ax^2 + bx + c_b = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-
-              <p class="lead">When `a != 0`, there are two solutions to `ax^2 + bx + c = 0` and they are</p>
-              <p  class="lead" style="text-align:center">`x = (-b +- sqrt(b^2-4ac_i))/(2a) .`</p>
-              
-
-
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-
-              <p class="lead">it <a href="blog-lineequation.html" target="_blank">here</a> if you need to, and the method behind it is called Least Squares.</p>
-
-
-
-              <h2>Least Squares</h2>
-
-              <p class="lead">The goal of least squares is to find the line that fits our data best.</p>
-              <p class="lead">Taking as an example the latitude of the position of a planet and 6 days in which we recorded the information, we can easily see a pattern, a tendency and we can draw a line using it as our first model.</p>
-              <p><img src="assets/img/line.png" alt="..."></p>
-              <!-- <footer><cite title="Source Title"></cite></footer> -->
-
-
-              <h4>Partial derivatives</h4>
-              <p class="lead">Partial derivatives are excellent to calculate how a function, depending of several variables, changes with respect to one of them, leaving the other ones constant. A crucial feature of partial derivatives is that they are equal to 0 on the maximum and minimum points of a function.</p>
-              
-              <p><img src="assets/img/partialderivative.gif" alt="..."></p>
-              <!-- <footer><cite title="Source Title"></cite></footer> -->
-              <br>
-
               <p><img src="assets/img/e3e4.gif" alt="..."></p>
-              <footer><cite title="Source Title">Predicting the future!</cite></footer>
+              <footer><cite title="Source Title">Figure 1</cite></footer>
               <br>
-              <p class="lead">¡voila!</p>
+              <p class="lead">if we have data that looks like figure 1, SVM is basically trying to draw a line between the two groups and divide in two classes. We set as 1 everything above the upper line and -1 below the lower line. Anything in between those lines we call it 0 or unclassified.</p>
+            </div>            
+          </div>
+
+          <div class="row gap-y">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card">
+                <p><img src="assets/img/e3e4.gif" alt="..."></p>
+                <footer><cite title="Source Title">Figure 2</cite></footer>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card">
+                <p><img src="assets/img/e3e4.gif" alt="..."></p>
+                <footer><cite title="Source Title">Figure 3</cite></footer>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card">
+                <p><img src="assets/img/e3e4.gif" alt="..."></p>
+                <footer><cite title="Source Title">Figure 4</cite></footer>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+              <p class="lead">The real trick is to find the best line to capable to divide our data. We could have a line like in figure 2 and 3, but as we can see in figure 4, having lines too close to the data makes it very likely to find some new data points in the unclassify area, lowering the accuracy by significant amounts.</p>
+              <p class="lead">So, how do we find the best line?. We follow the rule of the “widest street”. The algorithm finds the sidewalks first (support vectors) and then the middle of the street, as we can see in figure 1. Once we have found these three lines we are ready to classify new data.</p>
+              <p class="lead">That is the idea behind SVM. The mathematics are a bit confusing so I will try to break it down for you in this article.</p>
+
+              <h2>Restrictions</h2>
+              <p class="lead">We are going to need 3 basic lines, they will divide our space in 3 areas.</p>
+              <p><img src="assets/img/e3e4.gif" alt="..."></p>
+              <footer><cite title="Source Title">Figure </cite></footer>
+              <br>
+              <p class="lead">The lines are described by these equations:</p>
+              <p class="lead" style="text-align:center">`w^T·x+b>=1`,  `w^T·x+b=0`,  `w^T·x+b<=-1`</p>
+              <p class="lead">And as you can see in figure 6, our space is divided in3 parts, each part will label the data as 1, -1 and 0 in the center.</p>
+              <p class="lead">So far so good, the real trick is in finding those 3 lines and for that, the first step is to use a mathematical convenience:</p>
+              <p class="lead" style="text-align:center">`{(y_i=1 -> Class 1), (y_i = -1 -> Class 2):}`</p>
+              <p class="lead">And we use it as follows:</p>
+            </div>
+          </div>
+
+
+          <div class="row gap-y">
+            <div class="col-12 col-lg-4 offset-lg-2">
+              <h5 style="text-align:center">In the case we encounter an item of class 1:</h5>
+              <p  class="lead" style="text-align:center">`y_i(w^T·x+b)>=1`</p>
+              <p  class="lead" style="text-align:center">`color(#00b300)(+1(w^T·x+b)>=1)`</p>
+              <h6 style="text-align:center">+1 times something equals 1 or greater</h6>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5 style="text-align:center">In the case we encounter an item of class 2:</h5>
+              <p  class="lead" style="text-align:center">`y_i(w^T·x+b)<=-1`</p>
+              <p  class="lead" style="text-align:center">`-1(w^T·x+b)<=-1`</p>
+              <p  class="lead" style="text-align:center">`(-1)-1(w^T·x+b)<=-1(-1)`</p>
+              <p  class="lead" style="text-align:center">`color(#00b300)(+1(w^T·x+b)>=1)`</p>
+              <h6 style="text-align:center">+1 times something equals 1 or greater</h6>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+              <p class="lead">We get to the same equation, and I know it doesn seem like much but this mathematical convenience let’s us use only one expression to embed our 3 lines and manipulate our restrictions with ease.</p>
+              <p class="lead">Awesome!</p>
+
+              <h2>Optimization</h2>
+              <p class="lead">The next step is to check pairs of vectors from both classes, propose sidewalks and check how wide they are, the algorithm does this a few times until the right vectors are found, but right now let’s focus only on how we find the distance between those vectors.</p>
+              <p class="lead">I guess it's obvious the the first step is to find the difference between both vectors `(vec v_1 - vec v_2)`. The result will be a new vector `vec v_d` that will get close to be the distance we are looking for but not quite.</p>
+              <p class="lead">Now, imagine we set a new vector `vec w_u` perpendicular to the line marked by `vec v_2` and this particular vector is aunitary one. If we take the dot product of such vector `vec w_u` with `(vec v_1 - vec v_2)` we would get the wide of the street. We can see in figure X, my attempt to describe this more intuitively.</p>
+              <p><img src="assets/img/e3e4.gif" alt="..."></p>
+              <footer><cite title="Source Title">Figure X</cite></footer>
+              <br>
+              <p class="lead">Good. Now we have `(vec v_1 - vec v_2)·vec w_u = ` Width of Street.</p>
+              <p class="lead">Another way to write a unitary vector is like this: `vec w_u = vec w/norm(vec w)`. This is basically taking away from the vector all its amplitude, leaving only the basis multiplied by an amplitude of one.</p>
+              <p class="lead">So now we have: `W_{Street} = (vec v_1 - vec v_2)·vec w/norm(vec w)`.</p>
+              <p class="lead">Great! Look what happens if we solve the restriction we discussed above and combine the results to our equation.</p>
+              <p class="lead">`y_i(w^T·x+b)-1>=0 {(x=Class1 -> y_i=1), (x=Class 2-> y_i = -1):}`</p>
+            </div>
+          </div>
+
+          <div class="row gap-y">
+            <div class="col-12 col-lg-4 offset-lg-2">
+              <h5 style="text-align:center">In the case of class 1:</h5>
+              <p  class="lead" style="text-align:center">`y_i(w^T·vec v_1+b)-1>=0`</p>
+              <p  class="lead" style="text-align:center">`+1(w^T·vec v_1+b)-1>=0`</p>
+              <p  class="lead" style="text-align:center">`color(#ff8000)(w^T·vec v_1=1-b)`</p>
+              <h6 style="text-align:center">We can subsitute:</h6>
+              <p  class="lead" style="text-align:center">`(color(#ff8000)(vec v_1) - vec v_2)·color(#ff8000)(vec w)/norm(vec w)`</p>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5 style="text-align:center">In the case of class 2:</h5>
+              <p  class="lead" style="text-align:center">`y_i(w^T·vec v_2+b)-1>=0`</p>
+              <p  class="lead" style="text-align:center">`-1(w^T·vec v_2+b)-1>=0`</p>
+              <p  class="lead" style="text-align:center">`color(#0000ff)(-w^T·vec v_2=1+b)`</p>
+              <h6 style="text-align:center">We can subsitute:</h6>
+              <p  class="lead" style="text-align:center">`(vec v_1 color(#0000ff)(- vec v_2))·color(#0000ff)(vec w)/norm(vec w)`</p>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+              <p class="lead">Having as a result: `(color(#ff8000)((1-cancel(b))) + color(#0000ff)((1+cancel(b))))/norm(vec w)=color(#00b300)(ubrace(2/norm(vec w))_("Awesome result"))`</p>
+              <p class="lead">The reason that results is awesome is because if we focus on minimize `norm(vec w)` we get the highest value of the expression, giving us the widest street. We rewrite the expression in such a way that will be easier for us to differentiate later.</p>
+              <p class="lead" style="text-align:center">`1/2norm(vecw)^2`</p>
+              <p class="lead">Our job now is to minimize this equation in order to get the widest street.</p>
+              
+              
+              <h2>Lagrange multipliers</h2>
+              <p class="lead">`L = 1/2norm(vecw)^2 - sum alpha_i[y_i(w^T·vec v_2+b)-1]`</p>
+              <p class="lead"></p>
+              <p class="lead"></p>
+              <p class="lead"></p>
+              
+
+              <h2>Kernels</h2>
+              <p class="lead"></p>
+              <p class="lead"></p>
+              <p class="lead"></p>
+              
+
 
               <h2>References</h2>
-              <p class="lead"><a href="http://mathworld.wolfram.com/LeastSquaresFitting.html">http://mathworld.wolfram.com/LeastSquaresFitting.html</a></p>
+              <p class="lead"><a href="">Some link</a></p>
               <p class="lead">Project used for animations: <a href="https://github.com/jfreek/math_animations">https://github.com/jfreek/math_animations</a></p>
-              <p class="lead">Giphy channel:<a href="https://giphy.com/channel/jfreek">https://giphy.com/channel/jfreek</a></p>
 
-            </div>            
+            </div>
           </div>
 
 
