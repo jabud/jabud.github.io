@@ -241,11 +241,19 @@
               
               
               <h2>Lagrange multipliers</h2>
-              <p class="lead">`L = 1/2norm(vecw)^2 - sum alpha_i[y_i(w^T·vec v_2+b)-1]`</p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              <p class="lead"></p>
-              
+              <p class="lead">The last part we need to understand this algorithm, and in fact the part where we get to see the expression that describes the full process of how SVM works is called lagrange multipliers.</p>
+              <p class="lead">This method is used to get values from one equation taking into account a set of restrictions or rules, which is exactly what we need. Applied to the functions we already discussed, this method would look as follows:</p>
+              <p class="lead">`L = ubrace(1/2norm(vecw)^2)_("Optimization") - sum ubrace(alpha_i)_("Lagrange multipliers")[ubrace(y_i(w^T·vec v_2+b)-1)_("Restriction")]`</p>
+              <p class="lead">And in order to solve our problem we need to differentiate by our unknowns using partial derivatives.</p>
+              <p class="lead" style="text-align:center">`(deltaL)/(deltaw) = vec w - sum alpha_i y_i x_i = 0`</p>
+              <p class="lead" style="text-align:center">`(deltaL)/(deltab) = - sum alpha_i y_i = 0`</p>
+              <p class="lead" style="text-align:center">Solving...</p>
+              <p class="lead" style="text-align:center">`vec w = sum alpha_i y_i x_i`</p>
+              <p class="lead" style="text-align:center">`- sum alpha_i y_i = 0`</p>
+              <p class="lead" style="text-align:center">`y_i(w^T·vec v_2+b)-1 >=0`</p>
+              <p class="lead" style="text-align:center">With these 3 equations, we can substitute the values in our original `L` and solve.</p>
+              <p class="lead">If we do that we get: `L = sum alpha_i - 1/2 sum_i sum_j alpha_i alpha_j y_iy_j color(red)(x_i x_j) `</p>
+              <p class="lead">And this particular equation is telling us all. We check our restrictions and search for the widest street by taking pairs of vectors, one for each class until we find the right support vectors.</p>
 
               <h2>Kernels</h2>
               <p class="lead"></p>
