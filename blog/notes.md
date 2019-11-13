@@ -42,6 +42,7 @@ Check the documentation: [https://jupyter.org/](https://jupyter.org/)
     * `jupyter notebook`
 
 * Select a new kernel with your environment
+![alt-text](https://jfreek.github.io/assets/img/notes/virtualenv_jupyter_example.png)
 
 * Enjoy!
 
@@ -104,6 +105,29 @@ If you want to convert full html (`--template full`) or an embedding to add to y
 
 And done, add this to your github repo and it will look awesome, including the javascript form your plots. tables, etc.
 
+## Convert Jupyter Notebooks into Slides
+In fact the same tool from above can transofrm a notebook into a nice slide-show.
+
+First run the notebook:
+`jupyter notebook`
+
+Then, go to the menu bar and click on `view--> Cell Toolbar--> Slideshow`
+![alt-text](https://jfreek.github.io/assets/img/notes/slideshow2.png)
+
+After that check the top right side of your cells and select `slide`.
+![alt-text](https://jfreek.github.io/assets/img/notes/slideshow1.png)
+
+Finally run on the terminal:
+`jupyter nbconvert --to slides notebook.ipynb --post serve`
+
+The notebook will be converted to a slide and run automatically in your browser.
+
+To stop it just hit `ctrl+C` on the terminal.
+
+It can also be ran as:
+`jupyter nbconvert --to slides notebook.ipynb`
+
+Just to convert it and look at it later.
 
 ## Markdown to html
 I use this to create blog posts by writing a markdown file and transform them into html.
@@ -120,19 +144,21 @@ Install libraries:
 The first one is to convert markdown files and the second to create a CSS in case we need it.
 
 Example of a markdown file:
-This same text: [notes.md]('')
+This same text: [notes.md](https://jfreek.github.io/dev/blog/notes.md)
 
 Convert:
 ```python
-python -m markdown index.md > index.html
+python -m markdown notes.md > notes.html
 ```
 
 Convert with CSS:
 ```python
-python -m markdown -x codehilite index.md > body.html
+python -m markdown -x codehilite notes.md > notes.html
 ```
 
-`pygmentize -S default -f html > codehilite.css`
+```bash
+pygmentize -S default -f html > codehilite.css
+```
 
 Add html with CSS and other useful links:
 ```html
@@ -145,14 +171,11 @@ Add html with CSS and other useful links:
 </head>
 
 <body>
-
 ===================================================
 
             Markdown transformed content
 
 ===================================================
-
-
 </body>
 </html>
 ```
