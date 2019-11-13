@@ -42,6 +42,7 @@ Check the documentation: [https://jupyter.org/](https://jupyter.org/)
     * `jupyter notebook`
 
 * Select a new kernel with your environment
+
 ![alt-text](https://jfreek.github.io/assets/img/notes/virtualenv_jupyter_example.png)
 
 * Enjoy!
@@ -112,10 +113,12 @@ First run the notebook:
 `jupyter notebook`
 
 Then, go to the menu bar and click on `view--> Cell Toolbar--> Slideshow`
-![alt-text](https://jfreek.github.io/assets/img/notes/slideshow2.png)
+
+![alt-text](https://jfreek.github.io/assets/img/notes/slideshow1.png)
 
 After that check the top right side of your cells and select `slide`.
-![alt-text](https://jfreek.github.io/assets/img/notes/slideshow1.png)
+
+![alt-text](https://jfreek.github.io/assets/img/notes/slideshow2.png)
 
 Finally run on the terminal:
 `jupyter nbconvert --to slides notebook.ipynb --post serve`
@@ -144,7 +147,7 @@ Install libraries:
 The first one is to convert markdown files and the second to create a CSS in case we need it.
 
 Example of a markdown file:
-This same text: [notes.md](https://jfreek.github.io/dev/blog/notes.md)
+This same text: [notes.md](https://github.com/jfreek/jfreek.github.io/blob/master/blog/notes.md)
 
 Convert:
 ```python
