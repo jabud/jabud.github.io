@@ -43,6 +43,8 @@ Check the documentation: [https://jupyter.org/](https://jupyter.org/)
 
 * Select a new kernel with your environment
 
+![alt-text]('https://github.com/jfreek/jfreek.github.io/blob/dev/assets/img/notes/virtualenv_jupyter_example.png')
+
 * Enjoy!
 
 
@@ -120,19 +122,21 @@ Install libraries:
 The first one is to convert markdown files and the second to create a CSS in case we need it.
 
 Example of a markdown file:
-This same text: [notes.md]('')
+This same text: [notes.md]('https://github.com/jfreek/jfreek.github.io/edit/dev/blog/notes.md')
 
 Convert:
 ```python
-python -m markdown index.md > index.html
+python -m markdown notes.md > notes.html
 ```
 
 Convert with CSS:
 ```python
-python -m markdown -x codehilite index.md > body.html
+python -m markdown -x codehilite notes.md > notes.html
 ```
 
-`pygmentize -S default -f html > codehilite.css`
+```bash
+pygmentize -S default -f html > codehilite.css
+```
 
 Add html with CSS and other useful links:
 ```html
@@ -145,14 +149,11 @@ Add html with CSS and other useful links:
 </head>
 
 <body>
-
 ===================================================
 
             Markdown transformed content
 
 ===================================================
-
-
 </body>
 </html>
 ```
