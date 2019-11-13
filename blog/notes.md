@@ -105,6 +105,22 @@ If you want to convert full html (`--template full`) or an embedding to add to y
 
 And done, add this to your github repo and it will look awesome, including the javascript form your plots. tables, etc.
 
+## Convert Jupyter Notebooks into Slides
+In fact the same tool from above can transofrm a notebook into a nice slide-show.
+
+First run the notebook:
+`jupyter notebook`
+
+Then, go to the menu bar and click on `view--> Cell Toolbar--> Slideshow`
+
+After that check the top right side of your cells and select `slide`.
+
+Finally run on the terminal:
+`jupyter nbconvert notebook.ipynb --to slides --post serve`
+
+The notebook will be converted to a slide and run automatically in your browser.
+
+To stop it just hit `ctrl+C` on the terminal.
 
 ## Markdown to html
 I use this to create blog posts by writing a markdown file and transform them into html.
