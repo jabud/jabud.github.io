@@ -4,26 +4,21 @@ I found myself quite often going back to the instructions to do some little task
 
 ## Summary
 
-### <a href="#virtualenv">VirtualEnv</a>
+### <a href="#venv">VirtualEnv</a>
 Notes about installing, setting, selecting python version and activating virtualenvs.
-
 ### <a href="#notebook">Jupyer notebook</a>
 Notes related to the notebooks, installing, and setting up a kernel with a virtualenv.
-
 ### <a href="#scroll">Scroll to in jupyter notebooks</a>
 How to add Index or summaries like this one in a notebook or a markdown file.
-
 ### <a href="#nbtohtml">Jupyter notebook to HTML</a>
 Steps to convert a jupyter notebook into an HTML file.
-
 ### <a href="#nbtoslide">Jupyter notebook to Slideshow</a>
 Steps to make a notebook work as a slideshow.
-
 ### <a href="#mdtohtml">Markdown file to HTML</a>
 Convert a markdown file like this one into an HTML file you can publish.
 
 
-## VirtualEnv <a id='virtualenv'></a>
+## VirtualEnv<a id='venv'></a>
 To know more check: [https://docs.python-guide.org/dev/virtualenvs/](https://docs.python-guide.org/dev/virtualenvs/)
 
 Type the next commands on your terminal.
