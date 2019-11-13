@@ -42,8 +42,7 @@ Check the documentation: [https://jupyter.org/](https://jupyter.org/)
     * `jupyter notebook`
 
 * Select a new kernel with your environment
-
-![alt-text]('https://github.com/jfreek/jfreek.github.io/blob/dev/assets/img/notes/virtualenv_jupyter_example.png')
+![alt-text](https://jfreek.github.io/assets/img/notes/virtualenv_jupyter_example.png)
 
 * Enjoy!
 
@@ -122,7 +121,7 @@ Install libraries:
 The first one is to convert markdown files and the second to create a CSS in case we need it.
 
 Example of a markdown file:
-This same text: [notes.md]('https://github.com/jfreek/jfreek.github.io/edit/dev/blog/notes.md')
+This same text: [notes.md](https://jfreek.github.io/dev/blog/notes.md)
 
 Convert:
 ```python
