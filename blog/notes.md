@@ -112,15 +112,22 @@ First run the notebook:
 `jupyter notebook`
 
 Then, go to the menu bar and click on `view--> Cell Toolbar--> Slideshow`
+![alt-text](https://jfreek.github.io/assets/img/notes/slideshow2.png)
 
 After that check the top right side of your cells and select `slide`.
+![alt-text](https://jfreek.github.io/assets/img/notes/slideshow1.png)
 
 Finally run on the terminal:
-`jupyter nbconvert notebook.ipynb --to slides --post serve`
+`jupyter nbconvert --to slides notebook.ipynb --post serve`
 
 The notebook will be converted to a slide and run automatically in your browser.
 
 To stop it just hit `ctrl+C` on the terminal.
+
+It can also be ran as:
+`jupyter nbconvert --to slides notebook.ipynb`
+
+Just to convert it and look at it later.
 
 ## Markdown to html
 I use this to create blog posts by writing a markdown file and transform them into html.
