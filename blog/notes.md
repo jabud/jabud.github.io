@@ -6,7 +6,7 @@ I found myself quite often going back to the instructions to do some little task
 
 ### <a href="#venv">VirtualEnv</a>
 Notes about installing, setting, selecting python version and activating virtualenvs.
-### <a href="#notebook">Jupyer notebook</a>
+### <a href="#notebook">Jupyter notebook</a>
 Notes related to the notebooks, installing, and setting up a kernel with a virtualenv.
 ### <a href="#scroll">Scroll to in jupyter notebooks</a>
 How to add Index or summaries like this one in a notebook or a markdown file.
