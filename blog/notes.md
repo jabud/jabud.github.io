@@ -2,7 +2,28 @@
 
 I found myself quite often going back to the instructions to do some little tasks when using virtualenvs and jupyter notebooks, so instead of learning them for memory I decided to make my own notes to come here every time I need to and find everything in one place.
 
-## VirtualEnv
+## Summary
+
+### <a href="#virtualenv">VirtualEnv</a>
+Notes about installing, setting, selecting python version and activating virtualenvs.
+
+### <a href="#notebook">Jupyer notebook</a>
+Notes related to the notebooks, installing, and setting up a kernel with a virtualenv.
+
+### <a href="#scroll">Scroll to in jupyter notebooks</a>
+How to add Index or summaries like this one in a notebook or a markdown file.
+
+### <a href="#nbtohtml">Jupyter notebook to HTML</a>
+Steps to convert a jupyter notebook into an HTML file.
+
+### <a href="#nbtoslide">Jupyter notebook to Slideshow</a>
+Steps to make a notebook work as a slideshow.
+
+### <a href="#mdtohtml">Markdown file to HTML</a>
+Convert a markdown file like this one into an HTML file you can publish.
+
+
+## VirtualEnv <a id='virtualenv'></a>
 To know more check: [https://docs.python-guide.org/dev/virtualenvs/](https://docs.python-guide.org/dev/virtualenvs/)
 
 Type the next commands on your terminal.
@@ -28,7 +49,7 @@ Type the next commands on your terminal.
 
 
 
-## Jupyter notebook
+## Jupyter notebook <a id='notebook'></a>
 
 Check the documentation: [https://jupyter.org/](https://jupyter.org/)
 
@@ -48,7 +69,7 @@ Check the documentation: [https://jupyter.org/](https://jupyter.org/)
 * Enjoy!
 
 
-## Add Index with ‘scroll to’ functionality to jupyter notebooks
+## Add Index with ‘scroll to’ functionality to jupyter notebooks <a id='scroll'></a>
 
 Let’s say you have at the beginning of your notebook the Index or the summary of your content.
 ```markdown
@@ -83,7 +104,7 @@ Then, in the respective section of your notebook (In the exploration section), w
 And that’s it! Now it’s really easy to walk through large notebooks and go exactly to the section of interest.
 
 
-## Convert Jupyter Notebooks into HTML
+## Convert Jupyter Notebooks into HTML <a id='nbtohtml'></a>
 I found this one recently and I just use it every time now.
 
 Library: [https://nbconvert.readthedocs.io/en/latest/](https://nbconvert.readthedocs.io/en/latest/)
@@ -106,7 +127,7 @@ If you want to convert full html (`--template full`) or an embedding to add to y
 
 And done, add this to your github repo and it will look awesome, including the javascript form your plots. tables, etc.
 
-## Convert Jupyter Notebooks into Slides
+## Convert Jupyter Notebooks into Slides <a id='nbtoslide'></a>
 In fact the same tool from above can transofrm a notebook into a nice slide-show.
 
 First run the notebook:
@@ -130,9 +151,9 @@ To stop it just hit `ctrl+C` on the terminal.
 It can also be ran as:
 `jupyter nbconvert --to slides notebook.ipynb`
 
-Just to convert it and look at it later.
+Just to convert it and look at it later as a normal HTML file.
 
-## Markdown to html
+## Markdown to html <a id='mdtohtml'></a>
 I use this to create blog posts by writing a markdown file and transform them into html.
 There are better ways to do it (like using a jekyll template) but… well, it works for me.
 
