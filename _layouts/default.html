@@ -1,12 +1,27 @@
 <!doctype html>
 <html>
+
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Personal website">
+    <meta name="keywords" content="data science, data engineering, machine learning, web scraping, artificial intelligence, ciencia de datos, inteligencia artificial">
     <title>{{ page.title }}</title>
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="assets/css/core.min.css" rel="stylesheet">
+    <link href="assets/css/thesaas.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/v4-shims.css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <link rel="icon" href="assets/img/favicon.png">
     {% feed_meta %}
     {% seo %}
   </head>
+
   <body>
     {% include navigation.html %}
     {{ content }}
