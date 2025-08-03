@@ -1,40 +1,67 @@
-
-.thesaas-sections-split .section,
-.thesaas-sections-split .main-content .topbar,
-.thesaas-sections-split .main-content .site-footer {
-  margin: 30px 50px 100px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ebebeb;
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  padding: 20px;
+  background-color: #000000;
+  color: #000000;
 }
 
-.thesaas-sections-split .main-content .topbar {
-  position: static;
+header {
+  background-color: #000000;
+  background-image: linear-gradient(to bottom, #000000 0%, #000000 100%);
+  color: white;
+  padding: 120px 0 60px;
+  text-align: center !important;
 }
 
-.thesaas-sections-split .main-content .topbar .topbar-toggler {
-  display: none;
-}
-
-.thesaas-sections-split .section-info {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 600;
+h1 {
+  font-weight: 600 !important;
+  font-size: 50px !important;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  line-height: 1.6;
   letter-spacing: 1px;
-  padding-top: 60px;
 }
 
-.thesaas-sections-split.topbar-reveal .main-content .topbar-nav {
-  display: none;
+a {
+  color: #3db1cb;
+  text-decoration: none;
+  line-height: 1.9;
+  text-shadow: #3db1cb 0px 0px 2px;
 }
 
-@media (max-width: 768px) {
-
-  .thesaas-sections-split .section,
-  .thesaas-sections-split .main-content .site-footer {
-    margin: 30px 0 100px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-
+a:hover {
+  text-decoration: underline;
+  color: #a5255a;
+  text-shadow: #a5255a 0px 0px 5px;
 }
 
+strong {
+  font-weight: 600;
+  font-weight: bolder;
+  font-size: 20px !important;
+}
+
+footer {
+  position: absolute;
+  background-color: #000000;
+  color: white;
+  text-align: left;
+  bottom: 0;
+  width: 100%;
+}
+
+.abstract {
+  text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+}
+
+.socials {
+  font-weight: 400;
+  color:#fff;
+}
+
+::selection {
+  background: #a5255a;
+  color: #fff;
+}

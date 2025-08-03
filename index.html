@@ -1,46 +1,56 @@
----
-# front matter tells Jekyll to process Liquid, and can be refered as "page" in layouts
-layout: homepage
-title: Resoluble
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal website">
+    <meta name="keywords" content="data science, data engineering, machine learning, web scraping, artificial intelligence">
+    <title>Resoluble</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/v4-shims.css">
 
-<!-- Header -->
-<header class="header fadeout header-inverse pb-0 h-fullscreen" 
-    style="background-image: linear-gradient(to bottom, #000000 0%, #000000 100%);">
-    <!-- <canvas class="constellation"></canvas> -->
+</head>
 
-    <div class="container">
-        <!-- <div class="row h-full"> -->
-        <div class="col-12 text-center align-self-center">
-            <div style="text-shadow: rgba(249, 249, 249, 0.64) 0px 0px 13px;">
-                <h1 class="fs-50 fw-600 lh-15 hidden-sm-down"> 
-                    Resoluble
-                </h1>
-                <h1 class="fs-35 fw-600 lh-15 hidden-md-up"> Resoluble <br>
-                </h1>
-                <br>
-                <p class="fs-20 hidden-sm-down"><strong>Bienvenid@ a mi sitio personal.</strong></p>
-                <p class="fs-16 hidden-md-up"><strong>Bienvenid@ a mi sitio personal.</strong></p>
-                <!-- <p class="fs-20 hidden-sm-down">Blog</p>
-                <p class="fs-16 hidden-md-up">Blog</p>
-                <p class="fs-20 hidden-sm-down">Proyectos</p>
-                <p class="fs-16 hidden-md-up">Proyectos</p> -->
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div>
+                <div class="abstract">
+                    <h1>Resoluble</h1>
+                    <!-- <br> -->
+                    <p><strong>Bienvenid@ a mi sitio personal.</strong></p>
+                </div>
+                <!-- <div class="pages">
+                    <p>Blog</p>
+                    <p>Proyectos</p>
+                </div> -->
+            <div class="socials">
+                <a href="https://github.com/jabud" target="_blank">
+                    <i class="fa fa-github fa-2x" style="margin-right: 10px;"></i></a>
+                <a href="https://www.linkedin.com/in/jorgeabud/" target="_blank">
+                    <i class="fa fa-linkedin fa-2x" style="margin-right: 10px;"></i></a>
+                <a href="https://telegram.me/jorge_abud">
+                    <i class="fa fa-telegram fa-2x"></i></a>
             </div>
-        <div>
-            <a class="social-github" href="https://github.com/jabud" target="_blank">
-                <i class="fa fa-github fa-2x" style="margin-right: 10px;"></i></a>
-            <a class="social-linkedin" href="https://www.linkedin.com/in/jorgeabud/" target="_blank">
-                <i class="fa fa-linkedin fa-2x" style="margin-right: 10px;"></i></a>
-            <a class="social-telegram" href="https://telegram.me/jorge_abud">
-                <i class="fa fa-telegram fa-2x" style="margin-right: 0px;"></i></a>
-            <br>
-            <a class="fs-20 hidden-sm-down" href="jorge_espinoza_cv_082025.pdf"><strong>Curriculum vitae</strong></a>
-            <a class="fs-16 hidden-md-up" href="jorge_espinoza_cv_082025.pdf">Curriculum vitae</a>
+            <div>
+                <a href="assets/utils/jorge_espinoza_cv_082025.pdf"><strong>Curriculum vitae</strong></a>
+            </div>
+            </div>
         </div>
+    </header>
+    <!-- END Header -->
 
-        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Resoluble.</p>
+    </footer>
+    <!-- END Footer -->
 
-        <!-- </div> -->
-    </div>
-</header>
-<!-- END Header -->
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
