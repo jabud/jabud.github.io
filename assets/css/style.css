@@ -25,14 +25,16 @@ h1 {
 }
 
 a {
-  color: #702afd;
+  color: #3db1cb;
   text-decoration: none;
   line-height: 1.9;
+  text-shadow: #3db1cb 0px 0px 2px;
 }
 
 a:hover {
   text-decoration: underline;
   color: #a5255a;
+  text-shadow: #a5255a 0px 0px 5px;
 }
 
 strong {
@@ -51,12 +53,12 @@ footer {
 }
 
 .abstract {
-  text-shadow: rgba(249, 249, 249, 0.64) 0px 0px 13px;
+  text-shadow: rgb(255, 255, 255) 0px 0px 10px;
 }
 
 .socials {
   font-weight: 400;
-  color:#fff
+  color:#fff;
 }
 
 ::selection {
