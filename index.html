@@ -1,210 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+# front matter tells Jekyll to process Liquid, and can be refered as "page" in layouts
+layout: homepage
+title: Resoluble
+---
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138335771-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Header -->
+<header class="header fadeout header-inverse pb-0 h-fullscreen" 
+    style="background-image: linear-gradient(to bottom, #000000 0%, #000000 100%);">
+    <!-- <canvas class="constellation"></canvas> -->
 
-    gtag('config', 'UA-138335771-1');
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Building data driven solutions through data science, code and coffee.">
-  <meta name="keywords"
-    content="data science, data engineer, artificial intelligence, freelance, freelancer, machine learning, data scientist, web scraping, data engineering, big data, analytics">
-
-  <title>personal site</title>
-
-  <!-- Styles -->
-  <link href="assets/css/core.min.css" rel="stylesheet">
-  <link href="assets/css/thesaas.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- Favicons -->
-  <!-- <link rel="apple-touch-icon" href="assets/img/favicon.ico">
-    <link rel="icon" href="assets/img/favicon.ico"> -->
-
-  <!--  Open Graph Tags -->
-  <meta property="og:title" content="Jorge's website">
-  <meta property="og:description" content="Building data driven solutions through data science, code and coffee.">
-  <meta property="og:image" content="https://jabud.github.io/assets/img/jabud_frontimage.png">
-  <meta property="og:url" content="https://jabud.github.io">
-  <meta name="twitter:card" content="https://jabud.github.io/assets/img/jabud_frontimage.png">
-
-</head>
-
-<body>
-
-
-  <!-- Topbar -->
-  <nav class="topbar topbar-inverse topbar-expand-md topbar-sticky">
     <div class="container">
-
-      <div class="topbar-left">
-        <!-- <h4>
-            <a class="fs-20 text-white" href="index.html">JE</a>
-          </h4> -->
-      </div>
-
-
-      <div class="topbar-right">
-        <ul class="topbar-nav nav">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="" data-scrollto="about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="" data-scrollto="contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://jabud.github.io/cv">Resume</a>
-          </li>
-        </ul>
-        <button class="topbar-toggler">&#9776;</button>
-      </div>
-
-    </div>
-  </nav>
-  <!-- END Topbar -->
-
-
-  <!-- HEADER -->
-  <section class="section section-inverse py-300" id="header">
-    <div class="container">
-      <header>
-        <!-- PC Version -->
-        <h2 class="fs-28 hidden-sm-down">
-          <font style="color: #1ac13b">I am: </font>
-          <span class="text-inverse" data-type="Jorge Espinoza, a data scientist, a python developer"></span>
-        </h2>
-        <br class="hidden-sm-down">
-        <!-- End PC Version -->
-
-        <!-- Mobile Version -->
-        <h2 class="fs-30 text-center hidden-md-up">
-          <font style="color: #0F9D58">I am: </font>
-        </h2>
-        <h2 class="fs-30 text-center hidden-md-up">
-          <span class="text-inverse" data-type="Jorge Espinoza, a data scientist, a python developer"></span>
-        </h2>
-        <br class="hidden-md-up">
-        <!-- End Mobile Version -->
-
-      </header>
-
-    </div>
-  </section>
-
-
-  <!-- Main container -->
-  <main class="main-content">
-
-    <section class="section bg-fixed" id="about">
-      <!-- Desktop version -->
-      <div class="container hidden-sm-down">
-        <div class="row">
-          <div class="col-12 col-lg-6 pl-50 pr-80">
-            <h1 class="fs-40 text-center">About me</h1>
-
-          </div>
-          <div class="col-lg-6 hidden-md-down align-self-center">
-            <p class="lead fs-20">
-              I build data driven solutions leveraging tools like Data Science, Analytics and Machine Learning models.
-              I've applied such tools mainly in the Fintech industry and particularly in risk management and product
-              growth.
-            </p>
-            <p class="lead fs-20">
-              I also have another dusty toolbox where you can find Data Engineering tools, ETL pipelines and web
-              scraping.
-            </p>
-          </div>
-
-        </div>
-      </div>
-      <!-- Mobile verison -->
-      <div class="container hidden-md-up">
-        <div class="row">
-          <div class="col-12 col-lg-6 pl-50 pr-80 text-center">
-            <h1 class="fs-30">About me</h1>
-            <p class="lead fs-20">
-              I build data driven solutions leveraging tools like Data Science, Analytics and Machine Learning models.
-              I've applied such tools mainly in the Fintech industry and particularly in risk management and product
-              growth.
-            </p>
-            <p class="lead fs-20">
-              I also have another dusty toolbox where you can find Data Engineering tools, ETL pipelines and web
-              scraping.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-  </main>
-  <!-- END Main container -->
-
-  <!-- CONTACT -->
-  <section class="section section-inverse" id="contact">
-    <header class="section-header">
-      <h3 class="text-center fs-30">CONTACT</h3>
-    </header>
-    <div class="container">
-      <div class="row gap-y">
-
-        <div class="col-12 col-md-6">
-          <div class="h-full p-20 social social-color-brand text-center">
-            <h1 class="fs-20">STAY IN TOUCH</h1>
-            <br>
-
-            <a class="social-linkedin" href="https://www.linkedin.com/in/jorgeabud/" target="_blank"><i
-                class="fa fa-linkedin fa-3x"></i></a>
-            <a class="social-github" href="https://github.com/jabud" target="_blank"><i
-                class="fa fa-github fa-3x"></i></a>
-          </div>
-        </div>
-
-
-        <div class="col-12 col-md-5">
-          <div class="h-full p-20 text-center">
-            <h1 class="fs-20">SEND ME A MESSAGE</h1>
-            <br>
-
-            <div>
-              <a class="social-telegram" href="https://telegram.me/jorge_abud"><i class="fa fa-telegram fa-3x"></i></a>
+        <!-- <div class="row h-full"> -->
+        <div class="col-12 text-center align-self-center">
+            <div style="text-shadow: rgba(249, 249, 249, 0.64) 0px 0px 13px;">
+                <h1 class="fs-50 fw-600 lh-15 hidden-sm-down"> 
+                    Resoluble
+                </h1>
+                <h1 class="fs-35 fw-600 lh-15 hidden-md-up"> Resoluble <br>
+                </h1>
+                <br>
+                <p class="fs-20 hidden-sm-down"><strong>Bienvenid@ a mi sitio personal.</strong></p>
+                <p class="fs-16 hidden-md-up"><strong>Bienvenid@ a mi sitio personal.</strong></p>
+                <!-- <p class="fs-20 hidden-sm-down">Blog</p>
+                <p class="fs-16 hidden-md-up">Blog</p>
+                <p class="fs-20 hidden-sm-down">Proyectos</p>
+                <p class="fs-16 hidden-md-up">Proyectos</p> -->
             </div>
+        <div>
+            <a class="social-github" href="https://github.com/jabud" target="_blank">
+                <i class="fa fa-github fa-2x" style="margin-right: 10px;"></i></a>
+            <a class="social-linkedin" href="https://www.linkedin.com/in/jorgeabud/" target="_blank">
+                <i class="fa fa-linkedin fa-2x" style="margin-right: 10px;"></i></a>
+            <a class="social-telegram" href="https://telegram.me/jorge_abud">
+                <i class="fa fa-telegram fa-2x" style="margin-right: 0px;"></i></a>
             <br>
-            <div>
-              <span class="fs-20">resoluble.io@gmail.com</span>
-            </div>
-          </div>
+            <a class="fs-20 hidden-sm-down" href="jorge_espinoza_cv_082025.pdf"><strong>Curriculum vitae</strong></a>
+            <a class="fs-16 hidden-md-up" href="jorge_espinoza_cv_082025.pdf">Curriculum vitae</a>
         </div>
 
-      </div>
+        </div>
+
+        <!-- </div> -->
     </div>
-  </section>
-  <!-- END CONTACT -->
-
-
-  <!-- Footer -->
-  <footer class="section-inverse">
-    <div class="container">
-      <div class="row gap-y align-items-center">
-      </div>
-    </div>
-  </footer>
-  <!-- END Footer -->
-
-  <!-- Scripts -->
-  <script src="assets/js/core.min.js"></script>
-  <script src="assets/js/thesaas.min.js"></script>
-  <script src="assets/js/script.js"></script>
-
-</body>
-
-</html>
+</header>
+<!-- END Header -->
