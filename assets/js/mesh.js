@@ -76,7 +76,7 @@ function animate() {
         let offsetX = 0;
         let offsetY = 0;
 
-        if (mdist < MOUSE_RADIUS) {
+        if (mdist <= MOUSE_RADIUS) {
           const force = (1 - mdist / MOUSE_RADIUS) * 10;
           offsetX = (Math.random() - 0.5) * force;
           offsetY = (Math.random() - 0.5) * force;
@@ -85,7 +85,7 @@ function animate() {
         ctx.beginPath();
         ctx.moveTo(nodeA.x + offsetX, nodeA.y + offsetY);
         ctx.lineTo(nodeB.x + offsetX, nodeB.y + offsetY);
-        ctx.strokeStyle = `rgba(200, 200, 200, ${ALPHA})`;
+        ctx.strokeStyle = `rgba(255,255,255, ${ALPHA})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
       }
