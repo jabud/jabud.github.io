@@ -1,17 +1,36 @@
+:root {
+  --color-blue: #3db1cb;
+  --color-green: #64aa6e;
+  --color-red: #a5255a;
+  --color-purple: #8232dc;
+  --color-background: #151515;
+  --color-text: #ffffff;
+}
+
+/* Dark mode overrides */
+.dark-mode {
+  --color-blue: #3db1cb;
+  --color-green: #4c8354;
+  --color-red: rgba(165, 37, 69, .6);
+  --color-purple: #8232dc;
+  --color-background: #ffffff;
+  --color-text: #151515;
+}
+
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
   margin: 20px;
   padding: 20px;
-  background-color: #000000;
-  color: #000000;
+  background-color: var(--color-background);
+  color: var(--color-background);
   z-index: 1;
 }
 
 header {
   /* background-color: rgba(0, 0, 0, .1); */
   /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .2) 100%); */
-  color: white;
+  color:  var(--color-text);
   padding: 120px 0 60px;
   text-align: center !important;
   position: relative;
@@ -37,10 +56,10 @@ h1 {
 }
 
 a {
-  color: #3db1cb;
+  color: var(--color-blue);
   text-decoration: none;
   line-height: 1.9;
-  text-shadow: #3db1cb 0px 0px 2px;
+  text-shadow: var(--color-blue) 0px 0px 2px;
   z-index: 3;
 }
 
@@ -50,8 +69,8 @@ p {
 
 a:hover {
   text-decoration: underline;
-  color: #a5255a;
-  text-shadow: #a5255a 0px 0px 5px;
+  color: var(--color-red);
+  text-shadow: var(--color-red) 0px 0px 5px;
 }
 
 strong {
@@ -62,8 +81,7 @@ strong {
 
 footer {
   position: absolute;
-  /* background-color: #000000; */
-  color: white;
+  color: var(--color-text);
   text-align: left;
   bottom: 0;
   width: 100%;
@@ -71,15 +89,28 @@ footer {
 }
 
 .abstract {
-  text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+  text-shadow:  #ffffff 0px 0px 10px;
 }
 
 .socials {
   font-weight: 400;
-  color:#fff;
+  color: var(--color-text);
 }
 
 ::selection {
-  background: #a5255a;
-  color: #fff;
+  background: var(--color-red);
+  color: var(--color-text);
+}
+
+/* Botón de cambio de tema */
+#theme-toggle {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: color 0.3s;
+  bottom: 20px;
+  right: 50px;
 }

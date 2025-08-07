@@ -2,9 +2,9 @@
 
 // Config
 const NODE_DISTANCE = 50;
-const NODE_COUNT_X = (window.innerWidth) * (1/NODE_DISTANCE)
-const NODE_COUNT_Y = (window.innerHeight) * (1/NODE_DISTANCE)
-const ALPHA = 0.2;
+const NODE_COUNT_X = (window.innerWidth + NODE_DISTANCE) * (1/NODE_DISTANCE)
+const NODE_COUNT_Y = (window.innerHeight + NODE_DISTANCE) * (1/NODE_DISTANCE)
+const ALPHA = 0.5;
 const EDGE_DISTANCE = 50;
 const MOUSE_RADIUS = 200;
 const canvas = document.getElementById('mesh-canvas');
@@ -55,7 +55,7 @@ function animate() {
     // Draw node
     ctx.beginPath();
     ctx.arc(nodeA.x, nodeA.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${ALPHA})`;
+    ctx.fillStyle = `rgba(100, 170, 110,${ALPHA})`;
     
     ctx.fill();
 
@@ -85,7 +85,7 @@ function animate() {
         ctx.beginPath();
         ctx.moveTo(nodeA.x + offsetX, nodeA.y + offsetY);
         ctx.lineTo(nodeB.x + offsetX, nodeB.y + offsetY);
-        ctx.strokeStyle = `rgba(255,255,255, ${ALPHA})`;
+        ctx.strokeStyle = `rgba(100, 170, 110, ${ALPHA})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
       }
