@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const resenas = await getCollection('resenas', ({ data }) => !data.draft);
+  return resenas.map((r) => ({
+    params: { slug: r.id },
+    props: { r },
+  }));
+}) satisfies GetStaticPaths;
+
+const { r } = Astro.props;
+const { Content, headings } = await render(r);
+---
+
+<PostLayout
+  title={r.data.title}
+  description={r.data.description}
+  pubDate={r.data.pubDate}
+  updatedDate={r.data.updatedDate}
+  tags={r.data.tags}
+  headings={headings}
+  backHref="/resenas"
+  backLabel="reseñas"
+>
+  <Content />
+</PostLayout>
