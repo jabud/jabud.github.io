@@ -1,0 +1,28 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+// Solo h2 y h3 para mantener la TOC compacta
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{
+  toc.length > 0 && (
+    <aside class="toc">
+      <p class="toc-title">Contenido</p>
+      <ul>
+        {toc.map((h) => (
+          <li>
+            <a href={`#${h.slug}`} class={h.depth === 3 ? 'depth-3' : 'depth-2'}>
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}

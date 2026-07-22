@@ -1,0 +1,93 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import '../styles/global.css';
+
+const year = new Date().getFullYear();
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** true en posts: el slot controla su propio layout (con TOC), sin .main-inner */
+  wide?: boolean;
+}
+
+const {
+  title = 'Resoluble',
+  description = 'Sitio personal de Jorge Espinoza Abud: proyectos, notas técnicas, reseñas e ideas.',
+  wide = false,
+} = Astro.props;
+
+const fullTitle = title === 'Resoluble' ? title : `${title} · Resoluble`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Resoluble — Notas"
+      href={new URL('rss.xml', Astro.site)}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+
+    {/* Anti-parpadeo: fija tema y estado del sidebar antes de pintar */}
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+          if (localStorage.getItem('sidebar') === 'collapsed')
+            document.documentElement.dataset.sidebar = 'collapsed';
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="app">
+      <div class="corner">
+        <a href="/" title="Inicio">~</a>
+      </div>
+
+      <header class="topbar">
+        <Breadcrumb />
+        <div class="topbar-right">
+          <a href="/contexto">contexto</a>
+          <ThemeToggle />
+        </div>
+      </header>
+
+      <Sidebar />
+
+      <main class="main">
+        {
+          wide ? (
+            <slot />
+          ) : (
+            <div class="main-inner">
+              <slot />
+              <footer class="content-footer">
+                <span>&copy; {year} Resoluble</span>
+                <SocialLinks />
+              </footer>
+            </div>
+          )
+        }
+      </main>
+    </div>
+  </body>
+</html>

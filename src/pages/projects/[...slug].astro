@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+---
+
+<BaseLayout title={project.data.title} description={project.data.description}>
+  <article>
+    <a href="/projects" class="small muted">← proyectos</a>
+    <h1>{project.data.title}</h1>
+    <p class="entry-meta">
+      <time datetime={project.data.date.toISOString()}>{fmt(project.data.date)}</time>
+    </p>
+
+    <div class="project-links">
+      {
+        project.data.repo && (
+          <a href={project.data.repo} class="btn" target="_blank" rel="noopener noreferrer">
+            código ↗
+          </a>
+        )
+      }
+      {
+        project.data.link && (
+          <a href={project.data.link} class="btn" target="_blank" rel="noopener noreferrer">
+            sitio ↗
+          </a>
+        )
+      }
+    </div>
+
+    {
+      project.data.tags.length > 0 && (
+        <div class="tags">
+          {project.data.tags.map((t) => (
+            <span class="tag">{t}</span>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

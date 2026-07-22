@@ -1,0 +1,34 @@
+---
+// Breadcrumb estilo terminal. El "~" vive en el cuadro de la esquina;
+// aquí se muestra la ruta que continúa: /notas, /notas/mi-post, etc.
+const { pathname } = Astro.url;
+const raw = pathname.replace(/^\/+|\/+$/g, ''); // sin slashes al inicio/fin
+const parts = raw ? raw.split('/') : [];
+
+const labels: Record<string, string> = {
+  notas: 'notas',
+  resenas: 'reseñas',
+  projects: 'proyectos',
+};
+
+const segments = parts.map((part, i) => ({
+  text: labels[part] ?? part,
+  href: '/' + parts.slice(0, i + 1).join('/'),
+  isLast: i === parts.length - 1,
+}));
+---
+
+<nav class="breadcrumb" aria-label="Ruta">
+  {
+    segments.map((s) => (
+      <>
+        <span>/</span>
+        {s.isLast ? (
+          <span class="seg-current">{s.text}</span>
+        ) : (
+          <a href={s.href}>{s.text}</a>
+        )}
+      </>
+    ))
+  }
+</nav>

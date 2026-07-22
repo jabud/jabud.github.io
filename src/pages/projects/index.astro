@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('es-MX', { year: 'numeric', month: 'short', timeZone: 'UTC' });
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Proyectos" description="Proyectos personales de Jorge Abud.">
+  <h1>Proyectos</h1>
+  <p class="muted">Cosas que he construido y en las que trabajo.</p>
+
+  <ul class="entry-list">
+    {
+      projects.map((project) => {
+        // La caja entra al detalle del proyecto (post interno).
+        const detailHref = `/projects/${project.id}/`;
+        return (
+          <li class="entry">
+            <p class="entry-title">
+              <a href={detailHref} class="stretched-link">
+                {project.data.title}
+              </a>
+            </p>
+            <p class="entry-meta">
+              <time datetime={project.data.date.toISOString()}>{fmt(project.data.date)}</time>
+              {project.data.repo && (
+                <span>
+                  {' · '}
+                  <a
+                    href={project.data.repo}
+                    class="above"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    código ↗
+                  </a>
+                </span>
+              )}
+              {project.data.link && (
+                <span>
+                  {' · '}
+                  <a
+                    href={project.data.link}
+                    class="above"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    sitio ↗
+                  </a>
+                </span>
+              )}
+            </p>
+            <p class="entry-desc">{project.data.description}</p>
+            {project.data.tags.length > 0 && (
+              <div class="tags above">
+                {project.data.tags.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            )}
+          </li>
+        );
+      })
+    }
+    {projects.length === 0 && <li class="muted">Pronto habrá proyectos aquí.</li>}
+  </ul>
+</BaseLayout>

@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { tagSlug } from '../lib/content';
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('es-MX', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+
+const notes = (await getCollection('notas', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const resenas = (await getCollection('resenas', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+// Subconjunto "reciente" que se muestra por defecto (sin filtro).
+const recentNoteIds = new Set(notes.slice(0, 4).map((e) => e.id));
+const recentResenaIds = new Set(resenas.slice(0, 4).map((e) => e.id));
+const featured = projects.filter((p) => p.data.featured).slice(0, 4);
+const recentProjects = featured.length > 0 ? featured : projects.slice(0, 4);
+const recentProjectIds = new Set(recentProjects.map((e) => e.id));
+
+// Píldoras: etiquetas presentes en la home, por frecuencia.
+const tagMap = new Map<string, { tag: string; slug: string; count: number }>();
+for (const tag of [
+  ...notes.flatMap((e) => e.data.tags),
+  ...resenas.flatMap((e) => e.data.tags),
+  ...projects.flatMap((e) => e.data.tags),
+]) {
+  const slug = tagSlug(tag);
+  const existing = tagMap.get(slug);
+  if (existing) existing.count++;
+  else tagMap.set(slug, { tag, slug, count: 1 });
+}
+const pills = [...tagMap.values()].sort(
+  (a, b) => b.count - a.count || a.tag.localeCompare(b.tag)
+);
+
+const slugs = (tags: string[]) => tags.map(tagSlug).join(' ');
+---
+
+<BaseLayout>
+  <h1 class="sr-only">Resoluble — Jorge Abud</h1>
+
+  {
+    pills.length > 0 && (
+      <div class="filters" id="filters">
+        {pills.map((p) => (
+          <button class="pill" type="button" data-tag={p.slug} aria-pressed="false">
+            {p.tag} <span class="pill-count">{p.count}</span>
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  <section class="section" data-section>
+    <div class="section-head">
+      <h2 data-recent-label="Notas recientes" data-all-label="Notas">Notas recientes</h2>
+    </div>
+    <ul class="entry-list">
+      {
+        notes.map((post) => (
+          <li
+            class="entry"
+            data-tags={slugs(post.data.tags)}
+            data-recent={recentNoteIds.has(post.id) ? 'true' : undefined}
+          >
+            <p class="entry-title">
+              <a href={`/notas/${post.id}/`} class="stretched-link">
+                {post.data.title}
+              </a>
+            </p>
+            <p class="entry-meta">
+              <time datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time>
+            </p>
+            <p class="entry-desc">{post.data.description}</p>
+          </li>
+        ))
+      }
+      {notes.length === 0 && <li class="muted">Pronto habrá notas aquí.</li>}
+    </ul>
+  </section>
+
+  <section class="section" data-section>
+    <div class="section-head">
+      <h2 data-recent-label="Reseñas recientes" data-all-label="Reseñas">Reseñas recientes</h2>
+    </div>
+    <ul class="entry-list">
+      {
+        resenas.map((r) => (
+          <li
+            class="entry"
+            data-tags={slugs(r.data.tags)}
+            data-recent={recentResenaIds.has(r.id) ? 'true' : undefined}
+          >
+            <p class="entry-title">
+              <a href={`/resenas/${r.id}/`} class="stretched-link">
+                {r.data.title}
+              </a>
+            </p>
+            <p class="entry-meta">
+              <time datetime={r.data.pubDate.toISOString()}>{fmt(r.data.pubDate)}</time>
+              {r.data.author && <span> · {r.data.author}</span>}
+            </p>
+            <p class="entry-desc">{r.data.description}</p>
+          </li>
+        ))
+      }
+      {resenas.length === 0 && <li class="muted">Pronto habrá reseñas aquí.</li>}
+    </ul>
+  </section>
+
+  <section class="section" data-section>
+    <div class="section-head">
+      <h2>Proyectos</h2>
+    </div>
+    <ul class="entry-list">
+      {
+        projects.map((project) => (
+          <li
+            class="entry"
+            data-tags={slugs(project.data.tags)}
+            data-recent={recentProjectIds.has(project.id) ? 'true' : undefined}
+          >
+            <p class="entry-title">
+              <a href={`/projects/${project.id}/`} class="stretched-link">
+                {project.data.title}
+              </a>
+            </p>
+            <p class="entry-desc">{project.data.description}</p>
+          </li>
+        ))
+      }
+      {projects.length === 0 && <li class="muted">Pronto habrá proyectos aquí.</li>}
+    </ul>
+  </section>
+</BaseLayout>
+
+<script>
+  const filters = document.getElementById('filters');
+  if (filters) {
+    const pills = [...filters.querySelectorAll<HTMLButtonElement>('.pill')];
+    const cards = [...document.querySelectorAll<HTMLElement>('.entry[data-tags]')];
+    const sections = [...document.querySelectorAll<HTMLElement>('[data-section]')];
+    const titles = [...document.querySelectorAll<HTMLElement>('[data-recent-label]')];
+
+    let selected: string | null = null;
+
+    const render = () => {
+      pills.forEach((p) => {
+        const on = p.dataset.tag === selected;
+        p.classList.toggle('active', on);
+        p.setAttribute('aria-pressed', String(on));
+      });
+      cards.forEach((c) => {
+        const show =
+          selected === null
+            ? c.hasAttribute('data-recent')
+            : (c.dataset.tags || '').split(' ').includes(selected);
+        c.hidden = !show;
+      });
+      sections.forEach((s) => {
+        const any = [...s.querySelectorAll<HTMLElement>('.entry[data-tags]')].some(
+          (c) => !c.hidden
+        );
+        s.hidden = !any;
+      });
+      // "recientes" solo aplica al default; al filtrar se muestran todas.
+      titles.forEach((t) => {
+        t.textContent = selected === null ? t.dataset.recentLabel! : t.dataset.allLabel!;
+      });
+    };
+
+    const setSelected = (tag: string | null) => {
+      selected = tag;
+      render();
+      const url = new URL(location.href);
+      if (tag === null) url.searchParams.delete('tema');
+      else url.searchParams.set('tema', tag);
+      history.replaceState(null, '', url);
+    };
+
+    pills.forEach((p) =>
+      p.addEventListener('click', () => {
+        const tag = p.dataset.tag || '';
+        // Clic en la misma píldora seleccionada -> volver al default.
+        setSelected(selected === tag ? null : tag);
+      })
+    );
+
+    // Al cargar: aplicar ?tema= si es válido (ej. desde un chip de otra página).
+    const initial = new URL(location.href).searchParams.get('tema');
+    if (initial && pills.some((p) => p.dataset.tag === initial)) selected = initial;
+    render();
+  }
+</script>
