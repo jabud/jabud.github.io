@@ -1,5 +1,5 @@
 ---
-title: Cómo agrego una nota a este blog
+title: Cómo agrego una nota a este sitio
 description: Guía rápida para mí mismo — el flujo para publicar una nota nueva.
 pubDate: 2026-07-18
 tags: ["meta"]
@@ -7,8 +7,8 @@ tags: ["meta"]
 
 Nota para mi yo del futuro. Para publicar algo nuevo:
 
-1. Crea un archivo `.md` dentro de `src/content/blog/`. El nombre del archivo
-   será la URL (ej. `mi-idea.md` → `/blog/mi-idea/`).
+1. Crea un archivo `.md` dentro de `src/content/notas/`. El nombre del archivo
+   será la URL (ej. `mi-idea.md` → `/notas/mi-idea/`).
 2. Copia el bloque de *frontmatter* de otro post y ajústalo:
    - `title`: el título.
    - `description`: una línea de resumen (aparece en el listado).

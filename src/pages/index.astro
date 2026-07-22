@@ -54,7 +54,7 @@ const slugs = (tags: string[]) => tags.map(tagSlug).join(' ');
     pills.length > 0 && (
       <div class="filters" id="filters">
         {pills.map((p) => (
-          <button class="pill" type="button" data-tag={p.slug}>
+          <button class="pill" type="button" data-tag={p.slug} aria-pressed="false">
             {p.tag} <span class="pill-count">{p.count}</span>
           </button>
         ))}
@@ -156,7 +156,11 @@ const slugs = (tags: string[]) => tags.map(tagSlug).join(' ');
     let selected: string | null = null;
 
     const render = () => {
-      pills.forEach((p) => p.classList.toggle('active', p.dataset.tag === selected));
+      pills.forEach((p) => {
+        const on = p.dataset.tag === selected;
+        p.classList.toggle('active', on);
+        p.setAttribute('aria-pressed', String(on));
+      });
       cards.forEach((c) => {
         const show =
           selected === null

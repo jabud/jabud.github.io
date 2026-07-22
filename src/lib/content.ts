@@ -16,7 +16,7 @@ export const tagSlug = (tag: string): string =>
   tag
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '') // quita acentos
+    .replace(/[\u0300-\u036f]/g, '') // quita acentos
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
 

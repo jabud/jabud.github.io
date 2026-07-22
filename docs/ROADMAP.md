@@ -6,12 +6,13 @@ Roadmap de trabajo para el sitio personal (Astro). Marca de responsables:
 - 🤖 **Claude** — me toca a mí (implementación, maquetado, técnico).
 - 🤝 **Juntos** — requiere coordinación.
 
-Estado: rama `feature/redesign`, commits locales, **sin push todavía**. El rediseño
-(app-shell terminal, cajas, temas, secciones) está funcionando.
+Estado: el rediseño (app-shell terminal, cajas, temas, secciones) está funcionando y
+se publica en GitHub Pages. El flujo de trabajo es `feature → dev → master` (el merge
+a `master` dispara el deploy).
 
 ---
 
-## 1. Publicar el sitio (deploy) — _pendiente_
+## 1. Publicar el sitio (deploy) — _cómo funciona_
 
 - 🙋 Decidir cuándo es la **versión final** para publicar.
 - 🤝 Cambiar la fuente de GitHub Pages a **"GitHub Actions"**
