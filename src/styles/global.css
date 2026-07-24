@@ -35,7 +35,7 @@
   --fg: #e8e8ea;
   --muted: #9ca3af;
   --border: #26262b;
-  --accent: #8870ff; /* morado azulado #5f00ff aclarado para dark */
+  --accent: #8870ff; /* morado azulado #8870ff (derivado de #5f00ff) — versión dark */
   --code-bg: #1a1a1e;
   --hover-bg: #1a1a1e;
   --hover-border: #ffffff; /* máximo contraste en hover: blanco puro */
