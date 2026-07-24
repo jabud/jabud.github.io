@@ -22,11 +22,11 @@
   --fg: #1a1a1a;
   --muted: #6b7280;
   --border: #e5e7eb;
-  --accent: #7f00ff; /* violeta base #7f00ff — versión light */
+  --accent: #5f00ff; /* morado azulado #5f00ff — versión light */
   --code-bg: #f4f4f5;
   --hover-bg: #f3f4f6;
   --hover-border: #000000; /* máximo contraste en hover: negro puro */
-  --prompt: #7f00ff;
+  --prompt: #5f00ff;
 }
 
 /* Dark forzado por el toggle */
@@ -35,11 +35,11 @@
   --fg: #e8e8ea;
   --muted: #9ca3af;
   --border: #26262b;
-  --accent: #b366ff; /* violeta #7f00ff aclarado para dark */
+  --accent: #8870ff; /* morado azulado #8870ff (derivado de #5f00ff) — versión dark */
   --code-bg: #1a1a1e;
   --hover-bg: #1a1a1e;
   --hover-border: #ffffff; /* máximo contraste en hover: blanco puro */
-  --prompt: #b366ff;
+  --prompt: #8870ff;
 }
 
 /* Dark por preferencia del sistema (si no hay override claro) */
@@ -49,11 +49,11 @@
     --fg: #e8e8ea;
     --muted: #9ca3af;
     --border: #26262b;
-    --accent: #b366ff;
+    --accent: #8870ff;
     --code-bg: #1a1a1e;
     --hover-bg: #1a1a1e;
     --hover-border: #ffffff;
-    --prompt: #b366ff;
+    --prompt: #8870ff;
   }
 }
 

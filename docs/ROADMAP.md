@@ -97,3 +97,24 @@ con nodos/aristas precomputados en `graph.json`.
 
 > El NLP de A alimenta el grafo de B: hacer A primero deja los datos listos.
 > Reto: agregar un paso de Python al build (local o `setup-python` en Actions).
+
+### Template reutilizable para otros — 🤖 técnico
+
+Convertir el sitio en un **template de Astro** para que más gente (sobre todo en
+español) pueda lanzar uno igual, gratis y sin dependencias de pago. Astro ya
+soporta esto: se usa con "Use this template" en GitHub o
+`npm create astro@latest -- --template <repo>`.
+
+Pasos:
+
+1. **Repo separado** (no `jabud.github.io`, que tiene contenido personal), ej.
+   `resoluble-astro-theme`.
+2. **Genericizar** el contenido (CV, nombre, redes, notas/proyectos → placeholders).
+3. **Centralizar la config** en un solo archivo (ej. `src/site.config.ts`: nombre,
+   marca, descripción, redes, nav) del que lean los componentes. _(el grueso del
+   trabajo)_
+4. **README + licencia** (MIT).
+5. _(Opcional)_ Demo en vivo, capturas y subirlo al directorio de temas de Astro.
+
+Idea: construir el propio sitio personal **desde** el template, para mantener una
+sola base. Esfuerzo: unas horas para una versión usable; 1–2 días para una pulida.
