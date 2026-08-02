@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { site } from '../../site.config';
 
 const fmt = (d: Date) =>
-  d.toLocaleDateString('es-MX', {
+  d.toLocaleDateString(site.locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -15,7 +16,7 @@ const posts = (await getCollection('notas', ({ data }) => !data.draft)).sort(
 );
 ---
 
-<BaseLayout title="Notas" description="Notas técnicas e ideas de Jorge Abud.">
+<BaseLayout title="Notas" description={`Notas técnicas e ideas de ${site.shortAuthor}.`}>
   <h1>Notas</h1>
   <p class="muted">Notas técnicas e ideas.</p>
 

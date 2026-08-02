@@ -2,6 +2,7 @@
 import type { MarkdownHeading } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import { site } from '../site.config';
 
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const {
 } = Astro.props;
 
 const fmt = (d: Date) =>
-  d.toLocaleDateString('es-MX', {
+  d.toLocaleDateString(site.locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

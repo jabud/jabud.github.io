@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import SocialLinks from '../components/SocialLinks.astro';
+import { site, topNav } from '../site.config';
 import '../styles/global.css';
 
 const year = new Date().getFullYear();
@@ -15,17 +16,17 @@ interface Props {
 }
 
 const {
-  title = 'Resoluble',
-  description = 'Sitio personal de Jorge Espinoza Abud: proyectos, notas técnicas, reseñas e ideas.',
+  title = site.name,
+  description = site.description,
   wide = false,
 } = Astro.props;
 
-const fullTitle = title === 'Resoluble' ? title : `${title} · Resoluble`;
+const fullTitle = title === site.name ? title : `${title} · ${site.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={site.lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +38,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Resoluble — Notas"
+      title={`${site.name} — Notas`}
       href={new URL('rss.xml', Astro.site)}
     />
     <meta property="og:type" content="website" />
@@ -59,14 +60,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <div class="app">
-      <div class="corner">
-        <a href="/" title="Inicio">~</a>
-      </div>
-
       <header class="topbar">
-        <Breadcrumb />
+        <div class="topbar-left">
+          <a class="home" href="/" title="Inicio">{site.homeLabel}</a>
+          <Breadcrumb />
+        </div>
         <div class="topbar-right">
-          <a href="/contexto">contexto</a>
+          {topNav.map((item) => <a href={item.href}>{item.label}</a>)}
           <ThemeToggle />
         </div>
       </header>
@@ -81,7 +81,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
             <div class="main-inner">
               <slot />
               <footer class="content-footer">
-                <span>&copy; {year} Resoluble</span>
+                <span>&copy; {year} {site.name}</span>
                 <SocialLinks />
               </footer>
             </div>
