@@ -2,7 +2,7 @@
 title: Cómo montar un ambiente de trabajo para data science
 description: Mis pasos para armar un ambiente de data science, ya sea con conda o con Docker — miniconda, ambientes, librerías, kernel de Jupyter e imágenes de Docker.
 pubDate: 2022-03-05
-tags: ["data science", "python", "conda", "docker", "jupyter"]
+tags: ["data science", "conda", "docker", "jupyter"]
 ---
 
 Estos son los pasos que sigo para dejar listo un ambiente de trabajo de data
