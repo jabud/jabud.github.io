@@ -26,6 +26,13 @@ export const site = {
   lang: 'es',
   /** Locale para formatear fechas (ej. 'es-MX', 'es-ES'). */
   locale: 'es-MX',
+  /**
+   * Color de acento (enlaces, detalles, píldoras activas) en tema claro.
+   * Cambia estos dos valores para personalizar el color del sitio.
+   */
+  accent: '#5f00ff',
+  /** Color de acento en tema oscuro (conviene uno más claro para que resalte). */
+  accentDark: '#8870ff',
 } as const;
 
 // Enlaces sociales (iconos SVG inline, sin dependencias externas).
