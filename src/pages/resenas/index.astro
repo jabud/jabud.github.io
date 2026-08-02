@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { site } from '../../site.config';
 
 const fmt = (d: Date) =>
-  d.toLocaleDateString('es-MX', {
+  d.toLocaleDateString(site.locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -15,7 +16,7 @@ const resenas = (await getCollection('resenas', ({ data }) => !data.draft)).sort
 );
 ---
 
-<BaseLayout title="Reseñas" description="Reseñas de libros de Jorge Abud.">
+<BaseLayout title="Reseñas" description={`Reseñas de libros de ${site.shortAuthor}.`}>
   <h1>Reseñas</h1>
   <p class="muted">Libros que he leído y lo que me dejaron.</p>
 

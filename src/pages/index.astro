@@ -2,9 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { tagSlug } from '../lib/content';
+import { site } from '../site.config';
 
 const fmt = (d: Date) =>
-  d.toLocaleDateString('es-MX', {
+  d.toLocaleDateString(site.locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -48,7 +49,7 @@ const slugs = (tags: string[]) => tags.map(tagSlug).join(' ');
 ---
 
 <BaseLayout>
-  <h1 class="sr-only">Resoluble — Jorge Abud</h1>
+  <h1 class="sr-only">{site.name} — {site.shortAuthor}</h1>
 
   {
     pills.length > 0 && (
