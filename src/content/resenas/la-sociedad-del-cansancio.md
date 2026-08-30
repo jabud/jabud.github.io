@@ -7,29 +7,27 @@ rating: 5
 tags: ["filosofía"]
 ---
 
-# La sociedad del cansancio
-
-# De qué trata
+## De qué trata
 El argumento principal de Byung es que vivimos en una sociedad cuya patología definitoria es el cansancio crónico y la autoexigencia, de los cuales se derivan enfermedades neuronales como la depresión, hiperactividad, desgaste laboral, trastorno de personalidad, es decir, enfermedades de origen interno y no externo.  
 A su vez nos propone una posible solución o antídoto: La vida contemplativa, un descanso y un aburrimiento profundo, hacer actividades cuyo propósito es el goce y placer de la actividad misma.  
 Su forma de argumentar durtante los distintos capitulos es tomar como base diferentes libros, ideas, ensayos de otros filósofos o autores e irlos criticando de forma que llegamos de vuelta a su argumento principal. Para alguien que no ha leído a todo esos autores puede no ser tan sencillo seguir el hilo en algunos puntos, pero la idea general a la que apunta el libro es muy clara.
 
-## Contexto del autor
+### Contexto del autor
 Byung-Chul Han nació en Corea del Sur en 1959, su primer elección de estudios fue Ingeniería mecánica para después mudarse a Alemania a los 22 años, huyendo de la rigidez y exigencia familiar, donde estudió literatura y filosofía.  
 Eventualmente se doctoró en la Universidad de Friburgo en 1994 con una tesis sobre Martin Heidegger.  
 Actualmente es profesor en la Universidad de las Artes de Berlín. Donde lleva un estilo de vida muy reservado y crítico de la tecnología digital, al punto de no utilizar teléfonos inteligentes y preferir la lectura y la jardinería.  
 Su trabajo le hizo acreedor del Premio Princesa de Asturias de Comunicación y Humanidades en 2025.  
 Este ensayo lo escribió en el 2010.
 
-# Por capítulo
-## Prometeo extenuado
+## Por capítulo
+### Prometeo extenuado
 Hace una re-interpretación de la mitología griega de Prometeo y el hombre contemporáneo. En el mito, Prometo es castigado por Zeus, acusado de robo, el castigo consistía en encadenarlo a una columna, donde un águila se come su hígado durante el día, el hígado se regenera durante la noche y así el águila podría seguir comiendo el siguiente día, la condena era eterna.  
 La analogía hace referencia al águila con nuestro alter ego, causando daño autoinfligido, autoexplotación. El hígado en principio es un órgano insensible pero aquí si sufre de cansancio. Nuestra percepción de libertad es en realidad una falsedad coercitiva, en realidad estamos igual de encadenados.
 
 **Referencias:**
 * [El mito de prometeo](https://llevatetodo.com/el-mito-de-prometeo/)
 
-## Violencia neuronal
+### Violencia neuronal
 Todos los periodos de la historia tienen una patología asociada a ella, en nuestra época es la violencia neuronal.
 En este capitulo nos pasea por distintas teorías y genealogías que describen nuestra sociedad y hace un ejercicio dialéctico para llegar a la conclusion de que es el exceso de positivismo (o de lo igual) lo que nos esta generando esa violencia neuronal.
 **Antes** hubo una época bacteriana, donde las enfermedades provenían de **factores externos**, virus, bacterias. Esta época terminó al descubrirse los antibióticos.  
@@ -43,7 +41,7 @@ Enfermedades como la obesidad, el cáncer, asi como la violencia neuronal, son e
 * Jean Baudrillard, La transparencia del mal. Teoría de la violencia,. Violencia viral/virtual
 * Jean Baudrillard, Genealogía de la enemistad.
 
-## Más alla de la sociedad disciplinaria
+### Más alla de la sociedad disciplinaria
 Hemos transicionado de una sociedad disciplinaria a una sociedad del rendimiento. Del deber al poder.  
 En este capítulo, Byung se basa en la **sociedad de la disciplina** descrita por Michel Foucault, donde el **sujeto estaba forzado a obedecer**. Las instituciones características de esta sociedad eran los hospitales, manicomios, cárceles, cuarteles y fábricas, es decir instituciones de control y disciplina. La **prohibición** y el verbo **_deber_** dominaban en esta sociedad.  
 Ahora estamos en una sociedad del rendimiento, donde **el sujeto esta forzado a aportar rendimiento, a producir**. Las instituciones características son gimnasios, oficinas, bancos, aeropuertos, centros comerciales y laboratorios genéticos, es decir, ya no hay centros disciplinarios que marcan la diferencia entre lo normal y lo anómalo. El verbo _deber_ que connota negatividad se cambia por el verbo **_poder_** que connota positividad.  
@@ -62,7 +60,7 @@ Las enfermedades psíquicas de la sociedad del rendimiento son, justamente, mani
 * Friedrich Nietzsche, El ultimo hombre.
 * Hannah Arendt, La condición humana
 
-## Aburrimiento profundo
+### Aburrimiento profundo
 Otra manifestación del exceso de positividad se ve en el exceso de estímulos, información e impulsos que constantemente buscan nuestra atención.   
 Una instancia de esto es el multitasking, que es el hacer multiples tareas a la vez. Byung describe esto como un retroceso y no como un avance de la humanidad. El ejemplo que usa para explicar su punto son los animales en la naturaleza salvaje, es muy común ver en ellos la multitarea y la constante alerta, y tiene sentido que así sea, en la naturaleza salvaje el animal esta obligado a vivir así, y esa falta de relajación es también una falta de contemplación intensa. 
 **Los recientes desarrollos sociales y el cambio estructural de la atención hacen que la sociedad humana se parezca cada vez más a la naturaleza salvaje**.
@@ -80,7 +78,7 @@ En este capitulo se hace la mención de **la vita contemplativa**, que esta liga
 * Maurice Merleau-Ponty, Sentido y sinsentido.
 
 
-## Vita activa
+### Vita activa
 Aquí usa como base el trabajo de Hannah Arendt, la condición humana.
 Arendt trata de reivindicar la vida activa ante la vida contemplativa. Ve a la posibilidad de actuar como algo heroico que comienza al nacer. En virtud de haber nacido, debes obrar. La fe que obra milagros es sustituida por la acción, la acción heroica es ahora lo que obra milagros.  
 Según Arendt, todas las actividades del hombre vistas desde lejos podrían interpretarse no como actividades, sino como procesos biológicos. Incluido el trabajo. El hombre moderno habría quedado pasivamente a merced de esos procesos biológicos vitales. Todas las formas de vita activa, quedarían rebajadas al nivel de trabajo, a un proceso biológico del colectivo. La modernidad que inició como la inédita y heroica activación de las facultades humanas, ha acabado ahora en una **pasividad** mortal.  
@@ -93,7 +91,7 @@ Byung argumenta que estas ideas del animal laborans moderno no encajan con la so
 **Referencias:**
 * Hannah Arendt, La condición humana
 
-## Pedagogía de la mirada
+### Pedagogía de la mirada
 Según Nietzsche, hay tres tareas para las que se requieren educadores:
 1. Aprender a mirar
 2. Aprender a pensar
@@ -116,7 +114,7 @@ La potencia negativa se distingue de la impotencia, que es la incapacidad de hac
 **Referencias:**
 * Friedrich Nietzsche, El crepúsculo de los ídolos.
 
-## El caso Bartleby
+### El caso Bartleby
 Utiliza el relato de Herman Melville "Bartleby, el escribiente" y le da una interpretación patológica.   
 Es una historia donde las personas están completamente degradadas a animales laborantes, se desarrolla en un bufete sombrío y hostil, rodeado de rascacielos muy pegados, donde por las ventanas solo se ven más ladrillos y no alcanza a entrar ni la luz del sol. Todos los pasantes del abogado sufren trastornos neuróticos, son hiperactivos e irritantes, excepto por Bartleby, Bartlebly muestra síntomas de cansancio físico y mental inexplicable (neurasténicos). Su frase característica es **"preferiría no hacerlo"**, la cual segun Byung no es una expresión de la potencia negativa del no hacer, sino mas bien una apatía y falta de energía para actuar.  
 La sociedad descrita por Melville sigue siendo una sociedad disciplinaria, abundan muros y paredes típicos de la sociedad disciplinaria. Sigue simbolizando al sujeto forzado a obedecer. Los sentimientos de insuficiencia e inferioridad no forman parte de las emociones de Bartleby.  
@@ -130,7 +128,7 @@ Esta historia de "Wall street" es una historia sobre la extenuación.
 **Referencias:**
 * Herman Melville, Bartleby, el escribiente
 
-## La sociedad del cansancio
+### La sociedad del cansancio
 La sociedad del rendimiento, que esuna sociedad de la actividad, se esta conviertiendo en una sociedad del dopaje.  
 El dopaje es una consecuencia de una evolución en la que no solo el cuerpo, sino la persona entera se convierte en una **máquina de rendimiento**.  
 Según Peter Handke, el cansancio de la sociedad del rendimiento es un "cansancio que desune". Es un agotamiento solitario que te aísla.
@@ -147,7 +145,7 @@ Handke se refiere al cansancio fundamental como el que acaba con el aislamiento 
 **Referencias**:
 * Peter Handke, Ensayo sobre el cansancio
 
-## Sociedad del burnout
+### Sociedad del burnout
 Me parece que este es el capítulo mas largo del libro y es también el que lleva el título del libro en inglés.  
 Byung empieza hablando de el aparato psíquico de Freud y como está estructurado asumiendo una sociedad disciplinaria y represiva. Se basa en la negatividad de las prohibiciones. Pero la sociedad del rendimiento no se basa en la negatividad ni en el _deber_ represivo, sino en el _poder_ . El sujeto forzado a a aportar rendimiento tiene una psicología muy diferente a la del sujeto forzado a obedecer.
 
@@ -181,7 +179,7 @@ En el pie de página hay un párrafo sobre Aristoteles que creo vale la pena res
 * Friedrich Nietzsche, Así habló Zaratustra.
 * Giorgio Agamben, Homo sarcer
 
-## El tiempo sublime
+### El tiempo sublime
 Vivimos hoy en un tiempo sin fiesta, en una época sin festividad.  
 En este último capitulo Byumg nos habla sobre como se ha reducido el tiempo de fiesta po el tiempo laboral.  
 Un primer rasgo de lo que es una fiesta es que es algo que se celebra. Una celebración no connota un objetivo al que dirigirse. Se celebra una fiesta al igual que se recorre un lugar en el que ya se está.
@@ -234,7 +232,7 @@ Debemos volver a convertir los grandes almacenes en un hogar, incluso en un cent
 * Hans-Georg Gadamer, La actualidad de lo bello.
 * Giorgio Agamben, Profanaciones.
 
-# Conclusiones
+## Conclusiones
 Empezando por el **contexto material del autor**.  
 Hay 3 puntos que resaltan:  
 - Creció en un Corea de la posguerra marcada por una fuerte industrialización, disciplina social y presión educativa.
