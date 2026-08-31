@@ -4,7 +4,7 @@ description: App de pedidos para la dark kitchen Planta Salada.
 date: 2026-01-19
 link: https://plantasaladaapp.web.app/
 featured: false
-tags: ["app", "dark kitchen"]
+tags: ["app"]
 ---
 
 Aplicación de pedidos para una dark kitchen (Planta Salada), construida con
