@@ -2,7 +2,8 @@
 title: Hola, mundo
 description: Estreno mi nuevo sitio personal, construido con Astro y publicado en GitHub Pages.
 pubDate: 2026-07-19
-tags: ["meta", "astro"]
+draft: true
+tags: ["astro"]
 ---
 
 Este es el primer post de mi nuevo sitio. Lo reconstruí desde cero con

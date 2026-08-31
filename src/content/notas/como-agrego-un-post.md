@@ -2,6 +2,7 @@
 title: Cómo agrego una nota a este sitio
 description: Guía rápida para mí mismo — el flujo para publicar una nota nueva.
 pubDate: 2026-07-18
+draft: true
 tags: ["meta"]
 ---
 
