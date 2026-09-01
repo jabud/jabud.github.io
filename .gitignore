@@ -22,3 +22,4 @@ pnpm-debug.log*
 
 # legacy Jekyll
 */_site/*
+.obsidian/
