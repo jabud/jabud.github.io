@@ -149,4 +149,28 @@ El resultado de esto son click-farms de mano de obra barata que pasan todo el d�
 
 **Aceptar esta version de la IA es aceptar practicas laborales de las cuales muchos de nosotros no somos conscientes. Trabajos mal pagados sin una negociación colectiva y sin condiciones laborales justas.**
 
+### 2. Violencia de la IA
+En este capitulo vemos como la IA al utilizarse en sistemas institucionales puede incrementar la desconsideración y una precaridad general. 
+Empezando por como la IA se relaciona al método cientifico y cómo esa asociacion puede distraernos del impacto violento que que puede tener. 
+
+**Cientificismo**   
+La IA emula a la ciencia al recolectar datos y crear modelos en base a ellos, pero sus resultados no provienen de una hipótesis comprobada o un descubrimiento científico. No hay una teoría que explique cómo funcionan las cosas a la cual se vayan sumando otros científicos que apoyan esos hallazgos. La IA no trata de entender el mundo, solo trata de hacer predicciones probabilísticas.   
+La IA no es realista sino instrumental: Modela al mundo para obtener algo de él.
+
+LA IA esta convirtiendose en un nuevo **paradigma**, como una forma de entender al mundo. Así como en su momento la ciencia se convirtió en ese paradigma dominante como método para explicar al mundo.   
+Hay 3 principales características que se copia de la ciencia:
+1. Abstracción: La ciencia identifica las cualidades principales de un fenómeno para poder cuantificar, estudiarlo y entenderlo. Las separa de las cualidades secundarias o irrelevantes. La IA hace algo similar pero su naturaleza instrumental la hace tomar como real solo las cualidades útiles e ignorar el resto. 
+2. Reducción: Esta abtracción es reduccionista. La IA proveé una explicación de la realidad basada en features limitados, que después son reducidos aun más en transformaciones posteriores en los modelos como los de deep learning por ejemplo.
+3. Representación: La forma en que la IA representa al mundo es a través de los pesos aprendidos de sus capas. Al igual que en la ciencia, esta representación es distinta a aquello que intentan representar.
+
+La IA es un tipo de [cientificismo](https://es.wikipedia.org/wiki/Cientificismo). 
+
+**Precariedad**  
+La IA esta floreciendo bajo un sistema [Neoliberal](https://es.wikipedia.org/wiki/Neoliberalismo).
+Qué caracteristicas del neoliberalismo estan siendo amplificadas?
+Desindustrialización y precariedad son características del neoliberalismo.
+Precariedad:
+1. IA aplicada en lo laboral: Trabajadores ordinarios son los que mas sufren el impacto. Vigilancia, optimización de tareas, control constante, falta de condiciones justas, una decomposición del individuo lo que produce falta de comunidad y solidaridad entre trabajadores. Al mismo tiempo esta optimización tiene en su splanes el completo reemplazo del trabajador por la máquina. Ejemplos: Amazon warehousing workers, Uber.
+2. IA en lo Ecológico: Consumo de agua en lugares ya con problemas ambientales. El agua se usa como forma de desechar residuos electronicos, lo cual tiene impactos toxicos permanentes en esas zonas. Ironicamente se le promueve comouna posible solución al impacto climatico pero al mismo tiempo se usa también para mejorar la extracción de petróleo y gas, contribuyendo así a la degradación ambiental.
+
 ## Conclusiones
