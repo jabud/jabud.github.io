@@ -11,36 +11,68 @@ tags:
 draft: true
 ---
 
+## Contexto del autor
+Quién es: Dan McQuillan es Senior Lecturer ("Critical AI") en el departamento de Computing de Goldsmiths, University of London.
+
+Formación:
+- Licenciatura en Física por la Universidad de Oxford.
+- PhD en Física de Partículas Experimental por Imperial College London.
+
+Trayectoria (antes de la academia):
+- Después del PhD se alejó de la física y pasó a trabajo social: apoyo a personas con discapacidades intelectuales y defensoría en salud mental (acompañando a personas en detención psiquiátrica).
+- En los primeros días de la web, creó un sitio pionero con información traducida para solicitantes de asilo y refugiados.
+- Co-fundó un proyecto de ciencia ciudadana en Kosovo, donde jóvenes políticamente excluidos midieron niveles de contaminación, logrando poner el tema de la calidad del aire en la agenda nacional.
+- Trabajó en el NHS (sistema de salud británico).
+- Se unió a Amnesty International, donde fundó su primera dirección digital ("digital directorate").
+- Organizó "social tech camps" en Kirguistán y Sarajevo.
+
+Activismo: participó en movimientos sociales importantes como la campaña contra el "Poll Tax" en el Reino Unido, activismo ambiental, y las protestas del G8 en Génova (2001) contra la globalización inequitativa.
+
+Vida actual: vive en el norte de Londres, donde ayudó a fundar una organización de ayuda mutua durante la pandemia de COVID-19.
+
+Trabajo académico/público actual:
+- Enseña Ethical Computing, Critical AI y Social Media en Goldsmiths.
+- Su investigación critica los daños sociales de la IA, plantea un enfoque "antifascista" frente a la IA, y promueve la idea de "decomputing" como forma de resistencia.
+- Ha dado testimonio ante el House of Lords del Reino Unido sobre modelos de lenguaje grandes (LLMs), y ante el comité conjunto sobre IA del Oireachtas (parlamento irlandés) en noviembre de 2025.
+- Contribuyó a reportes de la Joseph Rowntree Foundation sobre formulación de políticas.
+- Aparece frecuentemente en podcasts (ej. Tech Won't Save Us) hablando de resistencia a la IA.
+
+Fuentes:
+- [Dr Dan McQuillan - Goldsmiths](https://www.gold.ac.uk/computing/people/d-mcquillan/)
+- [about - danmcquillan.org](https://danmcquillan.org/pages/about.html)
+- [Resisting AI: An Anti-fascist Approach to Artificial Intelligence](https://academic.oup.com/policy-press-scholarship-online/book/45148)
+- [Resisting AI - Wikipedia](https://en.wikipedia.org/wiki/Resisting_AI)
+- [Bristol University Press](https://bristoluniversitypress.co.uk/resisting-ai)
+- [Why We Must Resist AI w/ Dan McQuillan - Tech Won't Save Us](https://techwontsave.us/episode/158_why_we_must_resist_ai_w_dan_mcquillan)
+
 ## De qué trata
-### Contexto del autor
+### Ideas clave   
+El libro tiene 4 puntos clave:
+1. ¿Qué es la IA?.
+2. ¿Por qué debemos resistirla? 
+3. El enfoque antifascista.
+4. ¿Qué alternativas hay?.
 
-## Por capítulo
-### Introducción
-**Qué es la IA**  
-Desde la introducción el autor ya nos indica hacia donde va el libro: Cómo y por qué debemos resistir la inteligencia artificial. 
-La IA representa un cambio en la dinámica de la sociedad,que va a amplificar la austeridad y al mismo tiempo facilitar una política autoritaria.
+Para entender **qué es la inteligencia artificial** debemos tener en cuenta:
+  * Al nivel más básico: Un conjunto de operaciones computacionales.
+  * Las implicaciones sociales y el contexto material de la aplicación de la IA.
 
-Para entender qué es la inteligencia artificial debemos tener en cuenta:
-1. Al nivel más básico: Un conjunto de operaciones computacionales.
-2. La implicaciones sociales y el contexto de la aplicación de la IA.
+Es decir, en el libro se habla de la IA como un conjunto de capas interdependientes de tecnología, instituciones e ideología.   
+La IA, como la conocemos, es un un conjunto de computaciones, pero también es una productora de conocimiento, es un nuevo paradigma de organización social y un proyecto político.  
+>La IA no es neutral, así como nosotros no podemos ser neutrales. La IA es un proyecto político en el sentido en que actúa en el mundo de formas que afecta la distribución de poder, y sus tendencias políticas son reveladas a través de las barreras y separaciones que causa.
 
-Es decir, en el libro se habla de la IA como un conjunto de capas interdependientes de tecnología, instituciones e ideología.
-
-La IA, como la conocemos, es un un conjunto de computaciones, pero también es una productora de conocimiento, es un nuevo paradigma de organización social y un proyecto político.
-**La IA no es neutral**, así como nosotros no podemos ser neutrales. La IA es un proyecto político en el sentido en que actúa en el mundo de formas que afecta la distribución de poder, y sus tendencias políticas son reveladas a través de las barreras y separaciones que causa.
-
-**Resistiendo la IA**   
+**Resistiendo la IA**:  
 En la narrativa pública, la IA es presentada de dos formas principalmente:
 1. Como una herramienta que puede ser utilizada para el bien, solucionando nuestros más grandes problemas como al cambio climático, seguridad, salud, mucho más rápido y de forma más accesible.
 2. Como una herramienta que puede causar una distopia, donde la IA nos quita a todos nuestros trabajos. 
 
-Este libro no descarta la importancia de estas narrativas, pero no se centra en ninguna de ellas, sino que se enfoca en cómo la IA es un tecnología política en sus efectos materiales y sociales.
+Este libro no descarta la importancia de estas narrativas, pero no se centra en ninguna de ellas, sino que se enfoca en cómo la IA es una tecnología política en sus efectos materiales y sociales.   
 La IA amplificará desigualdades e injusticias pre-existentes, provocando aun más división y eventualmente un autoritarismo algorítmico. Y es de esta afirmación de donde nace el título al libro, debemos resisitir a la IA, y en los siguientes capítulos justifica el por qué a mas detalle.
 
 **Enfoque antifascista**  
 McQuillan argumenta que el fascismo en realidad nunca desapareció, y que es muy claro verlo en los partidos políticos que estan ganando poder en distintos países. Si tomamos esto como verdad, entonces debemos tener mucha precaución de cualquier tecnología de control que se desarrolle en una sociedad influenciada por estos partidos. Entonces la principal razón de un enfoque antifascista no es tanto que la IA sea utilizada por un regimen autoritario, sino que la IA opere dentro de las condiciones que dieron lugar a esos regímenes, es decir, que surgan soluciones facistas a problemas sociales.
 
-El libro no se refiere a que la IA sea fascista. Mas bien busca que entendamos lo que es el fascismo y que condiciones pueden dar lugar a que se desarrollen esas situaciones., particular en tiempos de crisis donde esas ideas pueden confundirse con soluciones. 
+El libro no se refiere a que la IA sea fascista. Mas bien busca que entendamos lo que es el fascismo y que condiciones pueden dar lugar a que se desarrollen esas situaciones, particularmente en tiempos de crisis donde esas ideas pueden confundirse con soluciones. 
 En resumen se puede entender el fascismo con dos palabras [_ultranacionalismo palingenético_](https://es.wikipedia.org/wiki/Ultranacionalismo_palingen%C3%A9tico). El término _palingenético_ se refiere a un "renacimiento nacional", debemos renacer de una supuesta decadencia y volver a un glorioso pasado, un proceso que será inevitablemente violento. _Ultranacionalismo_ se refiere a una nación definida no por la ciudadanía sino por una membresía orgánica de una comunidad étnica. Es decir, con la IA, **debemos estar alertas de cualquier funcionalidad que contribuya a una separación violenta entre "ellos" y "nosotros"**.
 
 El detonante requerido para que surja el fascismo es algun tipo de profunda crisis social. Estas ideas extremistas solo empiezan a ser atractivas para la mayoría cuando hay un sentimiento de crisis existencial que no se puede solucionar por métodos tradicionales. Pero eso no es todo, el segundo ingrediente que se requiere es la influencia de una élite o clase social dominante que force esas soluciones con el fin de preservar su poder.  
@@ -53,7 +85,7 @@ Hay un enfoque alternativo ante las situaciones planteadas: El apoyo colectivo.
 Usando la [Teoría del punto de vista feminista](https://iep.utm.edu/fem-stan/), se busca dar más visibilidad a grupos marginados y asegurar que sus experiencias y conocimientos sean considerados en la toma de decisiones colectivas.  
 El apoyo mutuo y la solidaridad son las bases para opponernos a la precariedad.
 
-Si reconocemos que la raís del problema radica en el status quo, significa que podemos empujar activamente a un mundo mejor. **Resisitir la IA es en gran medida sobre reestructurar las condiciones que dan lugar a la IA.**
+Si reconocemos que la raíz del problema radica en el status quo, significa que podemos empujar activamente a un mundo mejor. **Resistir la IA es en gran medida sobre reestructurar las condiciones que dan lugar a la IA.**
 
 La IA y todo lo que esta lleva consigo, debe contribuir al bien comun. Este libro nos ayuda a iluminar el camino que la tecnología debe tomar ante la venida de una crisis global.
 
