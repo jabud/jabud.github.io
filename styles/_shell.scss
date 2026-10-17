@@ -76,6 +76,7 @@ main.content {
 
   a {
     color: $muted;
+    text-decoration: none;
     &:hover {
       color: $body-color;
       text-decoration: none;
