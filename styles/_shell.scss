@@ -94,6 +94,23 @@ main.content {
   border-right: 1px solid $border-color;
   display: flex;
   flex-direction: column;
+  // Quarto deja el menú muy separado de la barra; el original lo pegaba.
+  // Hay tres espacios que sumar: el del propio menú, la utilidad `mt-1` de
+  // Bootstrap en la lista y el margen del primer elemento.
+  padding-top: 0.75rem;
+
+  .sidebar-menu-container {
+    padding-top: 0;
+    margin-top: 0;
+
+    // `mt-1` es una utilidad de Bootstrap y viene con !important
+    > ul {
+      margin-top: 0 !important;
+    }
+  }
+  .sidebar-item:first-child {
+    margin-top: 0;
+  }
 }
 .sidebar-navigation .sidebar-item-container {
   font-size: 0.92rem;
@@ -169,7 +186,8 @@ html[data-sidebar="collapsed"] {
   }
 }
 .sidebar-navigation .sidebar-item .sidebar-item-container > a {
-  padding: 0.45rem 0.25rem;
+  // Mismo espaciado que el menú del sitio original
+  padding: 0.55rem 1rem;
   border-left: 2px solid transparent;
   color: $muted;
 }
@@ -350,6 +368,15 @@ div.quarto-post.image-right {
 // Subsecciones (h3) sangradas bajo su sección
 #TOC ul ul .nav-link {
   padding-left: 0.9rem;
+}
+
+// La sección activa se marca solo con color. Quarto le pone además una barra
+// vertical a cada enlace (gris, morada en el activo) que compite con la línea
+// separadora de la columna.
+.sidebar nav[role="doc-toc"] > ul a,
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+  border-left: 0;
 }
 
 #quarto-margin-sidebar {
