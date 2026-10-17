@@ -188,7 +188,26 @@
     setTimeout(hideEmptySections, 0);
   };
 
+  // ------------------------------------------------------------------
+  // 4. Marcar la sección del menú también dentro de sus páginas
+  // ------------------------------------------------------------------
+  // Quarto solo resalta el enlace de la página exacta, así que al abrir una
+  // nota el menú se queda sin nada marcado. El sitio original resaltaba la
+  // sección completa.
+  const markActiveSection = () => {
+    document
+      .querySelectorAll("#quarto-sidebar .sidebar-item-container > a")
+      .forEach((link) => {
+        const target = new URL(link.getAttribute("href"), location.href);
+        const section = target.pathname.replace(/index\.html$/, "");
+        if (section !== "/" && location.pathname.startsWith(section)) {
+          link.classList.add("active");
+        }
+      });
+  };
+
   useAstroIcons();
+  markActiveSection();
   buildBreadcrumb();
   setupSidebarToggle();
   watchCategoryFilter();

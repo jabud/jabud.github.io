@@ -61,6 +61,10 @@ format:
     theme:
       light: [cosmo, styles/terminal-light.scss]
       dark: [cosmo, styles/terminal-dark.scss]
+    # Un resaltado por tema: con uno solo, el código queda ilegible en oscuro.
+    highlight-style:
+      light: github
+      dark: github-dark
     toc: true
     toc-title: "Contenido"
     toc-depth: 3

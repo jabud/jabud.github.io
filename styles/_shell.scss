@@ -102,14 +102,23 @@ main.content {
     // Hay tres espacios que sumar: el del propio menú, la utilidad `mt-1` de
     // Bootstrap en la lista y el margen del primer elemento.
     padding-top: 0.75rem;
+    // Sin padding lateral el resaltado del item activo llega de borde a borde;
+    // el aire lo pone el padding del propio enlace.
+    padding-left: 0;
+    padding-right: 0;
 
     .sidebar-menu-container {
       padding-top: 0;
       margin-top: 0;
+      // Sin esto el resaltado del item activo deja franjas a los lados en
+      // lugar de cubrir el ancho del menú.
+      padding-left: 0;
+      padding-right: 0;
 
       // `mt-1` es una utilidad de Bootstrap y viene con !important
       > ul {
         margin-top: 0 !important;
+        padding-left: 0;
       }
     }
     .sidebar-item:first-child {
@@ -161,47 +170,119 @@ main.content {
   content: "«";
 }
 
-// Estado colapsado: el menú sale del grid y flota con solo los iconos, de modo
-// que Quarto recentra el contenido con su propio layout de página sin menú.
-// Solo en pantallas anchas: por debajo de 992px Quarto esconde el menú tras su
-// botón de hamburguesa, y superponer esto lo descuadra.
+// El menú reducido a una tira de iconos: sale del grid y flota fijo a la
+// izquierda. Es el estado colapsado en escritorio y el estado permanente en
+// móvil, igual que en el sitio original.
+@mixin menu-de-iconos {
+  #quarto-sidebar {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    z-index: 50;
+    border-right: 1px solid $border-color;
+  }
+  .sidebar-item-container .menu-text,
+  .collapse-label {
+    display: none;
+  }
+  .sidebar-navigation .sidebar-item .sidebar-item-container > a,
+  .collapse-btn {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .collapse-chevron::before {
+    content: "»";
+  }
+}
+
+// Escritorio: solo cuando se pulsa el botón de colapsar. Al quitarle al body
+// las clases del menú, Quarto recentra el contenido con su propio layout de
+// página sin menú, así que no hace falta empujarlo a mano.
 @media (min-width: 992px) {
   html[data-sidebar="collapsed"] {
-    #quarto-sidebar {
-      position: fixed;
-      top: 48px;
-      left: 0;
-      bottom: 0;
-      width: 56px;
-      z-index: 50;
-    }
-    .sidebar-item-container .menu-text,
-    .collapse-label {
-      display: none;
-    }
-    .sidebar-navigation .sidebar-item .sidebar-item-container > a,
-    .collapse-btn {
-      justify-content: center;
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .collapse-chevron::before {
-      content: "»";
-    }
-    // El menú flota fijo, así que el pie de página pasaría por debajo.
+    @include menu-de-iconos;
+
     .nav-footer {
       margin-left: 56px;
     }
   }
 }
 
-// En móvil no hay nada que colapsar: el menú ya vive tras la hamburguesa.
+// Móvil: el sitio original no esconde el menú tras una hamburguesa, lo deja
+// como tira de iconos permanente. Para reproducirlo hay que desarmar el modo
+// responsive de Bootstrap, que colapsa tanto el menú como la barra superior.
 @media (max-width: 991.98px) {
-  .collapse-btn {
-    display: none;
+  @include menu-de-iconos;
+
+  #quarto-sidebar {
+    // Bootstrap lo tiene como .collapse, que es display:none
+    display: flex !important;
+    flex-direction: column;
+    padding-top: 0.75rem;
+
+    // Sin esto el menú interno conserva su ancho de escritorio y los iconos
+    // caen fuera de la tira, recortados.
+    .sidebar-menu-container,
+    .sidebar-menu-container > ul {
+      width: 100%;
+      min-width: 0;
+    }
   }
+
+  // El grid no reserva columna para un menú flotante. Se le hace sitio con
+  // padding dentro de la columna de contenido: estrechar el contenedor del
+  // grid no sirve, porque sus columnas están calculadas en píxeles y la
+  // página acaba desbordándose a lo ancho.
+  // Sin border-box el padding se suma al ancho que le da el grid y la página
+  // termina más ancha que la pantalla.
+  main.content,
+  footer.footer .nav-footer {
+    box-sizing: border-box;
+    padding-left: 56px;
+    max-width: 100%;
+  }
+
+  // Quarto añade en móvil una franja con el título de la página; el shell ya
+  // tiene su propia ruta y el título va justo debajo.
+  .quarto-page-breadcrumbs {
+    display: none !important;
+  }
+
+  // Fuera la hamburguesa: los enlaces de la barra caben y se quedan a la vista.
+  .navbar-toggler,
+  #quarto-sidebar-glass,
+  .quarto-btn-toggle {
+    display: none !important;
+  }
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: flex-end;
+  }
+  .navbar > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  // El ~ pegado a la izquierda (Bootstrap lo centra con `mx-auto`) y el
+  // interruptor de tema al final, junto a los enlaces.
+  .navbar-container > .navbar-brand-container {
+    order: 1;
+    margin-right: auto;
+    margin-left: 0;
+  }
+  // El collapse de los enlaces tiene order 20; el interruptor va después
+  .navbar-container > .quarto-navbar-tools {
+    order: 21;
+  }
+
   // La ruta completa no cabe junto al ~ en una pantalla estrecha
   .terminal-path {
+    display: none;
+  }
+  // Sin nada que colapsar, el botón sobra
+  .collapse-btn {
     display: none;
   }
 }
@@ -435,6 +516,13 @@ pre {
   background: $code-bg;
   border: none;
   border-radius: 8px;
+}
+
+// Los bloques sin lenguaje (un requirements.txt, una salida pegada) no pasan
+// por el resaltado y se quedaban con el texto en negro sobre fondo oscuro.
+pre:not(.sourceCode),
+pre.text {
+  color: $code-color;
 }
 
 // Salidas de celdas ejecutadas: separadas del código pero del mismo bloque
