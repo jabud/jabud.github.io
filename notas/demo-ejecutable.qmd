@@ -2,7 +2,11 @@
 title: Una nota que ejecuta su propio código
 description: Prueba de concepto del sitio en Quarto — el código de esta página se ejecuta de verdad al publicar, sin pegar capturas ni exportar nada a mano.
 date: 2026-10-16
+toc: true
 categories: ["quarto", "python"]
+format:
+  html:
+    code-fold: true
 jupyter: python3
 ---
 
