@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - contexto.qmd
+    - notas/
+    - resenas/
+    - projects/
+  resources:
+    - cv.pdf
+
+lang: es
+
+website:
+  title: "Resoluble"
+  description: "Sitio personal de Jorge Espinoza Abud: proyectos, notas técnicas, reseñas e ideas."
+  site-url: https://jabud.github.io
+  favicon: favicon.svg
+  open-graph: true
+  search: false
+  navbar:
+    title: "~"
+    href: index.qmd
+    right:
+      - text: contexto
+        href: contexto.qmd
+  sidebar:
+    style: docked
+    contents:
+      - text: notas
+        href: notas/index.qmd
+      - text: reseñas
+        href: resenas/index.qmd
+      - text: proyectos
+        href: projects/index.qmd
+  page-footer:
+    left: "Jorge Espinoza Abud"
+    right:
+      - icon: github
+        href: https://github.com/jabud
+      - icon: linkedin
+        href: https://www.linkedin.com/in/jorgeabud/
+      - icon: telegram
+        href: https://telegram.me/jorge_abud
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles/terminal-light.scss]
+      dark: [cosmo, styles/terminal-dark.scss]
+    toc: true
+    toc-title: "En esta página"
+    toc-depth: 3
+    code-copy: true
+    link-external-newwindow: true
+    date-format: "D MMM YYYY"
+
+execute:
+  freeze: auto

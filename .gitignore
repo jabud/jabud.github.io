@@ -23,3 +23,12 @@ pnpm-debug.log*
 # legacy Jekyll
 */_site/*
 .obsidian/
+
+# Quarto
+_site/
+.quarto/
+
+/.quarto/
+**/*.quarto_ipynb
+*.quarto_ipynb
+*.quarto_ipynb_*

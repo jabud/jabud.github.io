@@ -1,0 +1,50 @@
+---
+pagetitle: "Resoluble"
+toc: false
+listing:
+  - id: notas-recientes
+    contents:
+      - notas/*.qmd
+      - notas/*.ipynb
+      - "!notas/index.qmd"
+    sort: "date desc"
+    type: default
+    max-items: 4
+    fields: [title, date, description]
+  - id: resenas-recientes
+    contents:
+      - resenas/*.qmd
+      - "!resenas/index.qmd"
+    sort: "date desc"
+    type: default
+    max-items: 4
+    fields: [title, date, author, description]
+  - id: proyectos-destacados
+    contents:
+      - projects/*.qmd
+      - "!projects/index.qmd"
+    sort: "date desc"
+    type: default
+    max-items: 4
+    fields: [title, description]
+---
+
+```{=html}
+<!-- La home no lleva título visible: arranca directo en las secciones. -->
+<style>#title-block-header { display: none !important; }</style>
+```
+
+## Notas recientes
+
+::: {#notas-recientes}
+:::
+
+## Reseñas recientes
+
+::: {#resenas-recientes}
+:::
+
+## Proyectos
+
+::: {#proyectos-destacados}
+:::

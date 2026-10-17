@@ -1,0 +1,73 @@
+---
+title: Una nota que ejecuta su propio código
+description: Prueba de concepto del sitio en Quarto — el código de esta página se ejecuta de verdad al publicar, sin pegar capturas ni exportar nada a mano.
+date: 2026-10-16
+categories: ["quarto", "python"]
+jupyter: python3
+---
+
+Esta nota existe para probar una sola cosa: que el código que escribo aquí **se ejecuta
+al publicar el sitio**. No hay capturas de pantalla ni salidas copiadas a mano; lo que
+ves abajo lo calculó Python durante la compilación de esta página.
+
+## Una tabla
+
+```{python}
+import pandas as pd
+
+lenguajes = pd.DataFrame(
+    {
+        "lenguaje": ["Python", "R", "Julia", "Observable JS"],
+        "ejecutable en Quarto": [True, True, True, True],
+        "lo uso": ["a diario", "rara vez", "no", "no"],
+    }
+)
+lenguajes
+```
+
+## Una gráfica
+
+El color de la línea es el mismo acento del sitio, para comprobar que las figuras
+pueden seguir la identidad visual en lugar de usar los colores por defecto.
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+ACENTO = "#5f00ff"
+
+x = np.linspace(0, 4 * np.pi, 300)
+y = np.exp(-x / 8) * np.sin(x)
+
+fig, ax = plt.subplots(figsize=(7, 3.2))
+ax.plot(x, y, color=ACENTO, linewidth=2)
+ax.axhline(0, color="#9ca3af", linewidth=0.8)
+ax.set_xlabel("tiempo")
+ax.set_ylabel("amplitud")
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+plt.show()
+```
+
+## La prueba de que se ejecutó
+
+Si esta nota tuviera las salidas pegadas a mano, la fecha de abajo nunca cambiaría.
+Cambia en cada compilación, así que delata el momento exacto en que se generó la página.
+
+```{python}
+from datetime import datetime
+
+print(f"Página generada el {datetime.now():%d/%m/%Y a las %H:%M:%S}")
+```
+
+## Por qué importa
+
+En el sitio anterior, hecho con Astro, publicar un análisis significaba ejecutar el
+notebook aparte, exportarlo y pegar las imágenes resultantes. Cada vez que cambiaba un
+dato había que repetir el ciclo completo, y era fácil que la nota publicada y el
+notebook real dejaran de coincidir.
+
+Aquí no hay dos versiones que mantener sincronizadas: el archivo que escribo **es** el
+que se ejecuta. Y gracias a `freeze`, el código solo vuelve a correr cuando yo lo
+modifico, de modo que publicar una corrección de ortografía no dispara el cálculo de
+nuevo.

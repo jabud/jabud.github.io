@@ -1,0 +1,45 @@
+---
+title: contexto
+description: Quién soy, a qué me dedico y la filosofía detrás de este sitio, sus notas y proyectos.
+---
+
+Soy Jorge Espinoza Abud. Actualmente trabajo en [Uplabs](https://uplabs.com/up-labs)
+creando productos piloto y MVPs basados en datos e inteligencia artificial que después
+se transforman en nuevas empresas. Mi proyecto principal es
+[PartsPulse](https://partspulse.ai/), una plataforma que resuelve un problema
+multifactorial de disponibilidad de productos, precios y comportamiento de clientes en
+la industria de transporte pesado y manufactura, donde lidero el equipo de data.
+
+## Por qué este sitio
+
+1. Una forma de expresión, supongo. ¿De qué sirven las ideas si no se comparten? Un
+   espacio para hacer algo por gusto, sin un objetivo económico detrás, un lugar para
+   compartir libre de ads. Y de paso, para volver a leer mis notas y proyectos, que
+   muchas veces se me olvidan.
+2. Escribo en español a propósito. Buena parte del conocimiento técnico vive en inglés,
+   y eso levanta una barrera de idioma y de acceso a la información para mucha gente en
+   México y en los países de habla hispana. Este sitio es mi pequeño intento de bajar
+   esa barrera: compartir lo que voy aprendiendo, en mi idioma.
+
+## Qué vas a encontrar aquí
+
+**Proyectos.** Cosas que construyo, muchas veces con ayuda de IA, pero con una regla:
+que sean **sostenibles** sin depender de una suscripción ni de pagar por llamadas a
+APIs. Me interesa que sean útiles y que cualquiera pueda usarlas, correrlas y
+mantenerlas sin un costo recurrente.
+
+**Notas.** Ideas, conceptos o detalles técnicos que me parecen interesantes y que quizá
+le sirvan a alguien más. Son mi forma de dejar por escrito lo que no quiero olvidar.
+
+**Reseñas.** Una forma de soltar las ganas de hablar de los libros que me gustaron. Y de
+paso, escribir sobre ellos me ayuda a estructurar mi comprensión de los mismos y a
+entenderlos mejor.
+
+## Colaboremos
+
+Estoy abierto a trabajar en proyectos interesantes, sobre todo si están relacionados con
+**energía**, **cambio climático** o **bien social**. Si tienes algo en mente, escríbeme.
+
+## Contacto
+
+Puedes encontrarme en los enlaces del pie de página, o descargar mi [CV](cv.pdf).
