@@ -90,10 +90,15 @@
   // las clases `nav-sidebar docked`. Al quitarlas, el contenido se recentra solo
   // usando el layout que Quarto ya trae para páginas sin menú, y el sidebar pasa
   // a flotar fijo con solo los iconos. Es menos frágil que reescribir el grid.
+  // Por debajo de este ancho Quarto guarda el menú tras su hamburguesa y
+  // maneja el layout a su manera: ahí no hay que colapsar nada.
+  const isWideScreen = () => window.matchMedia("(min-width: 992px)").matches;
+
   const applySidebarState = (collapsed) => {
-    root.dataset.sidebar = collapsed ? "collapsed" : "expanded";
-    body.classList.toggle("nav-sidebar", !collapsed);
-    body.classList.toggle("docked", !collapsed);
+    const active = collapsed && isWideScreen();
+    root.dataset.sidebar = active ? "collapsed" : "expanded";
+    body.classList.toggle("nav-sidebar", !active);
+    body.classList.toggle("docked", !active);
   };
 
   const setupSidebarToggle = () => {
@@ -128,15 +133,26 @@
 
     sidebar.append(button);
 
-    let stored = null;
-    try {
-      stored = localStorage.getItem("sidebar");
-    } catch (e) {
-      /* idem */
-    }
-    const collapsed = stored === "collapsed";
-    applySidebarState(collapsed);
-    sync(collapsed);
+    const storedCollapsed = () => {
+      try {
+        return localStorage.getItem("sidebar") === "collapsed";
+      } catch (e) {
+        return false;
+      }
+    };
+
+    const restore = () => {
+      const collapsed = storedCollapsed();
+      applySidebarState(collapsed);
+      sync(collapsed);
+    };
+
+    restore();
+    // Al cruzar el umbral (rotar el teléfono, redimensionar) hay que rehacerlo,
+    // o el menú se queda flotando sobre el contenido en pantalla estrecha.
+    window
+      .matchMedia("(min-width: 992px)")
+      .addEventListener("change", restore);
   };
 
   // ------------------------------------------------------------------
