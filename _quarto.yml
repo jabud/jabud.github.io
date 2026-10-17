@@ -8,7 +8,7 @@ project:
     - resenas/
     - projects/
   resources:
-    - cv.pdf
+    - assets/
 
 lang: es
 
@@ -29,20 +29,26 @@ website:
     style: docked
     contents:
       - text: notas
+        icon: file-text
         href: notas/index.qmd
       - text: reseñas
+        icon: book
         href: resenas/index.qmd
       - text: proyectos
+        icon: folder
         href: projects/index.qmd
   page-footer:
-    left: "Jorge Espinoza Abud"
+    left: "© 2026 Resoluble"
     right:
       - icon: github
         href: https://github.com/jabud
+        aria-label: GitHub
       - icon: linkedin
         href: https://www.linkedin.com/in/jorgeabud/
+        aria-label: LinkedIn
       - icon: telegram
         href: https://telegram.me/jorge_abud
+        aria-label: Telegram
 
 format:
   html:
@@ -52,9 +58,13 @@ format:
     toc: true
     toc-title: "En esta página"
     toc-depth: 3
+    # Sin esto el TOC solo despliega la sección activa y los h3 quedan ocultos.
+    toc-expand: true
     code-copy: true
     link-external-newwindow: true
     date-format: "D MMM YYYY"
+    include-after-body:
+      - js/shell.html
 
 execute:
   freeze: auto

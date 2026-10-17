@@ -2,6 +2,9 @@
 pagetitle: "Resoluble"
 toc: false
 listing:
+  # Las píldoras se declaran una sola vez, pero Quarto suma las categorías de
+  # todos los listados de la página y su filtro actúa sobre los tres: con esto
+  # basta para tener un filtro global con el conteo de todo el sitio.
   - id: notas-recientes
     contents:
       - notas/*.qmd
@@ -9,7 +12,7 @@ listing:
       - "!notas/index.qmd"
     sort: "date desc"
     type: default
-    max-items: 4
+    categories: numbered
     fields: [title, date, description]
   - id: resenas-recientes
     contents:
@@ -17,7 +20,6 @@ listing:
       - "!resenas/index.qmd"
     sort: "date desc"
     type: default
-    max-items: 4
     fields: [title, date, author, description]
   - id: proyectos-destacados
     contents:
@@ -25,7 +27,6 @@ listing:
       - "!projects/index.qmd"
     sort: "date desc"
     type: default
-    max-items: 4
     fields: [title, description]
 ---
 

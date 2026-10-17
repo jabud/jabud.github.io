@@ -34,10 +34,13 @@ h3 {
   font-size: 1.1rem;
 }
 
-// Ancho de lectura: el contenido no se estira en pantallas anchas.
+// Ancho de lectura: el contenido no se estira en pantallas anchas, y se centra
+// dentro de su columna en vez de quedar pegado al menú.
 main.content {
   max-width: $content-width;
   padding-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // ---------------------------------------------------------------
@@ -63,14 +66,95 @@ main.content {
   font-size: 0.9rem;
 }
 
+// Ruta estilo terminal (~/notas/hola-mundo) que arma js/shell.html
+.terminal-path {
+  font-family: $font-family-monospace;
+  font-size: 0.95rem;
+  color: $muted;
+  margin-left: 0.15rem;
+  white-space: nowrap;
+
+  a {
+    color: $muted;
+    &:hover {
+      color: $body-color;
+      text-decoration: none;
+    }
+  }
+  .seg-current {
+    color: $body-color;
+  }
+}
+
 // ---------------------------------------------------------------
 // Menú lateral: la línea vertical es su borde derecho
 // ---------------------------------------------------------------
 #quarto-sidebar {
   border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
 }
 .sidebar-navigation .sidebar-item-container {
   font-size: 0.92rem;
+}
+.sidebar-navigation .bi {
+  font-size: 18px;
+  vertical-align: -0.15em;
+}
+
+// Botón de colapsar, anclado al pie del menú
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding: 0.55rem 1rem;
+  border: none;
+  border-top: 1px solid $border-color;
+  background: transparent;
+  color: $muted;
+  font-family: $font-family-monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    color: $body-color;
+    background: $hover-bg;
+  }
+}
+.collapse-chevron::before {
+  content: "«";
+}
+
+// Estado colapsado: el menú sale del grid y flota con solo los iconos, de modo
+// que Quarto recentra el contenido con su propio layout de página sin menú.
+html[data-sidebar="collapsed"] {
+  #quarto-sidebar {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    z-index: 50;
+  }
+  .sidebar-item-container .menu-text,
+  .collapse-label {
+    display: none;
+  }
+  .sidebar-navigation .sidebar-item .sidebar-item-container > a,
+  .collapse-btn {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .collapse-chevron::before {
+    content: "»";
+  }
+  // El menú flota fijo, así que el pie de página pasaría por debajo.
+  .nav-footer {
+    margin-left: 56px;
+  }
 }
 .sidebar-navigation .sidebar-item .sidebar-item-container > a {
   padding: 0.45rem 0.25rem;
@@ -96,6 +180,11 @@ main.content {
   margin-bottom: 3rem;
 }
 
+// El listado que solo existe para alimentar las píldoras de la home
+#listing-filtro-global {
+  display: none;
+}
+
 // `.image-right` la añade Quarto y es más específica que `.quarto-post` sola:
 // hay que nombrarla o su `flex-direction: row-reverse` gana y manda la fecha
 // a la izquierda del título.
@@ -112,9 +201,17 @@ div.quarto-post.image-right {
     border-color 0.15s ease,
     background 0.15s ease;
 
-  // El contraste máximo en hover (negro puro / blanco puro) es la firma
-  // visual del sitio original.
-  &:hover {
+  // Quarto quita el borde inferior del último post (su listado usa separadores,
+  // no cajas). Aquí cada entrada es una caja, así que se repone.
+  &:last-of-type {
+    border-bottom: 1px solid $border-color;
+  }
+
+  // El contraste máximo en hover (negro puro / blanco puro) es la firma visual
+  // del sitio original. Va después del :last-of-type para ganarle en el borde
+  // inferior, que tiene la misma especificidad.
+  &:hover,
+  &:last-of-type:hover {
     border-color: $hover-border;
     background: $hover-bg;
   }
@@ -226,6 +323,17 @@ div.quarto-post.image-right {
 // ---------------------------------------------------------------
 // Tabla de contenidos
 // ---------------------------------------------------------------
+// La línea vertical que separa la tabla de contenidos del texto
+#TOC {
+  border-left: 1px solid $border-color;
+  padding-left: 1.5rem;
+
+  // Subsecciones (h3) sangradas bajo su sección
+  ul ul .nav-link {
+    padding-left: 0.9rem;
+  }
+}
+
 #quarto-margin-sidebar {
   .nav-link {
     color: $muted;
@@ -287,5 +395,14 @@ pre {
       color: $body-color;
       text-decoration: none;
     }
+  }
+
+  // Mismo tamaño que los iconos sociales del sitio original
+  .bi {
+    font-size: 18px;
+  }
+  .nav-footer-right .nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }

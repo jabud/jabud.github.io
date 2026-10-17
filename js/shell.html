@@ -1,0 +1,141 @@
+<script>
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+
+  // Nombres bonitos para los segmentos de la ruta: las carpetas del repo están
+  // sin acentos, pero en pantalla queremos leerlas en español.
+  const LABELS = { notas: "notas", resenas: "reseñas", projects: "proyectos" };
+
+  // ------------------------------------------------------------------
+  // 1. Ruta estilo terminal junto al ~ de la barra superior
+  // ------------------------------------------------------------------
+  const buildBreadcrumb = () => {
+    const brand = document.querySelector(".navbar-brand-container");
+    if (!brand || document.querySelector(".terminal-path")) return;
+
+    const segments = location.pathname.split("/").filter(Boolean);
+    if (segments.length === 0) return;
+
+    const path = document.createElement("span");
+    path.className = "terminal-path";
+
+    segments.forEach((raw, i) => {
+      const isLast = i === segments.length - 1;
+      const slug = raw.replace(/\.html$/, "");
+      // index.html de una sección no aporta nada: la carpeta ya se muestra.
+      if (slug === "index") return;
+
+      path.append("/");
+      const label = LABELS[slug] || slug;
+
+      if (isLast) {
+        const current = document.createElement("span");
+        current.className = "seg-current";
+        current.textContent = label;
+        path.append(current);
+      } else {
+        const link = document.createElement("a");
+        link.href = "/" + segments.slice(0, i + 1).join("/") + "/";
+        link.textContent = label;
+        path.append(link);
+      }
+    });
+
+    if (path.childNodes.length) brand.append(path);
+  };
+
+  // ------------------------------------------------------------------
+  // 2. Menú lateral colapsable
+  // ------------------------------------------------------------------
+  // Quarto reserva una columna del grid para el sidebar mientras el body tenga
+  // las clases `nav-sidebar docked`. Al quitarlas, el contenido se recentra solo
+  // usando el layout que Quarto ya trae para páginas sin menú, y el sidebar pasa
+  // a flotar fijo con solo los iconos. Es menos frágil que reescribir el grid.
+  const applySidebarState = (collapsed) => {
+    root.dataset.sidebar = collapsed ? "collapsed" : "expanded";
+    body.classList.toggle("nav-sidebar", !collapsed);
+    body.classList.toggle("docked", !collapsed);
+  };
+
+  const setupSidebarToggle = () => {
+    const sidebar = document.querySelector("#quarto-sidebar");
+    if (!sidebar || document.querySelector(".collapse-btn")) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "collapse-btn";
+    button.innerHTML =
+      '<span class="collapse-chevron" aria-hidden="true"></span>' +
+      '<span class="collapse-label">colapsar</span>';
+
+    const sync = (collapsed) => {
+      button.setAttribute("aria-expanded", String(!collapsed));
+      button.setAttribute(
+        "aria-label",
+        collapsed ? "Expandir el menú" : "Colapsar el menú"
+      );
+    };
+
+    button.addEventListener("click", () => {
+      const collapsed = root.dataset.sidebar !== "collapsed";
+      applySidebarState(collapsed);
+      sync(collapsed);
+      try {
+        localStorage.setItem("sidebar", collapsed ? "collapsed" : "expanded");
+      } catch (e) {
+        /* modo privado: el estado simplemente no se recuerda */
+      }
+    });
+
+    sidebar.append(button);
+
+    let stored = null;
+    try {
+      stored = localStorage.getItem("sidebar");
+    } catch (e) {
+      /* idem */
+    }
+    const collapsed = stored === "collapsed";
+    applySidebarState(collapsed);
+    sync(collapsed);
+  };
+
+  // ------------------------------------------------------------------
+  // 3. Al filtrar por categoría, esconder las secciones que quedan vacías
+  // ------------------------------------------------------------------
+  // El filtro de Quarto actúa sobre todos los listados de la página, así que en
+  // la home puede dejar un encabezado ("Reseñas recientes") sin nada debajo.
+  const hideEmptySections = () => {
+    // La guardia es tener un listado, no tener entradas: al filtrar, Quarto
+    // saca los posts del DOM, así que una sección vacía no tiene ninguno.
+    document.querySelectorAll("section.level2").forEach((section) => {
+      if (!section.querySelector(".quarto-listing")) return;
+      const posts = [...section.querySelectorAll(".quarto-post")];
+      section.hidden = !posts.some((post) => post.style.display !== "none");
+    });
+  };
+
+  const watchCategoryFilter = () => {
+    const categories = document.querySelectorAll(
+      ".quarto-listing-category .category"
+    );
+    if (!categories.length) return;
+    categories.forEach((category) =>
+      category.addEventListener("click", () =>
+        requestAnimationFrame(hideEmptySections)
+      )
+    );
+    window.addEventListener("hashchange", () =>
+      requestAnimationFrame(hideEmptySections)
+    );
+    // Al cargar con un #category= en la URL, Quarto filtra después de este
+    // script, así que la primera pasada va al final de la cola de eventos.
+    setTimeout(hideEmptySections, 0);
+  };
+
+  buildBreadcrumb();
+  setupSidebarToggle();
+  watchCategoryFilter();
+})();
+</script>
