@@ -182,10 +182,25 @@ main.content {
     width: 56px;
     z-index: 50;
     border-right: 1px solid $border-color;
+    // Los 20px que Quarto le pone a los lados dejarían el icono y su
+    // resaltado descentrados dentro de la tira.
+    padding-left: 0;
+    padding-right: 0;
   }
   .sidebar-item-container .menu-text,
   .collapse-label {
     display: none;
+  }
+  // Sin esto el menú interno conserva su ancho de escritorio: los iconos caen
+  // fuera de la tira y el resaltado del item activo queda como un recuadro
+  // flotando en medio en vez de cubrirla de lado a lado. Lleva el #id delante
+  // porque así lo fija Quarto.
+  #quarto-sidebar .sidebar-menu-container,
+  #quarto-sidebar .sidebar-menu-container > ul {
+    width: 100%;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   .sidebar-navigation .sidebar-item .sidebar-item-container > a,
   .collapse-btn {
@@ -222,14 +237,6 @@ main.content {
     display: flex !important;
     flex-direction: column;
     padding-top: 0.75rem;
-
-    // Sin esto el menú interno conserva su ancho de escritorio y los iconos
-    // caen fuera de la tira, recortados.
-    .sidebar-menu-container,
-    .sidebar-menu-container > ul {
-      width: 100%;
-      min-width: 0;
-    }
   }
 
   // El grid no reserva columna para un menú flotante. Se le hace sitio con
@@ -238,10 +245,13 @@ main.content {
   // página acaba desbordándose a lo ancho.
   // Sin border-box el padding se suma al ancho que le da el grid y la página
   // termina más ancha que la pantalla.
-  main.content,
-  footer.footer .nav-footer {
+  main.content {
     box-sizing: border-box;
     padding-left: 56px;
+    max-width: 100%;
+  }
+  footer.footer .nav-footer {
+    box-sizing: border-box;
     max-width: 100%;
   }
 
@@ -537,6 +547,13 @@ pre.text {
 // ---------------------------------------------------------------
 // Pie de página
 // ---------------------------------------------------------------
+// El selector lleva `footer.footer` porque así lo fija Quarto, que deja 1em a
+// cada lado y hace que el texto y los iconos queden pegados al borde.
+footer.footer .nav-footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .nav-footer {
   border-top: 1px solid $border-color;
   font-size: 0.85rem;
@@ -557,5 +574,15 @@ pre.text {
   .nav-footer-right .nav-link {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+
+// En móvil el pie suma el hueco de la tira de iconos a su propio margen, para
+// que el © no quede debajo del menú. Va al final del archivo a propósito: con
+// la misma especificidad que la regla de arriba, gana la última declarada.
+@media (max-width: 991.98px) {
+  footer.footer .nav-footer {
+    padding-left: calc(56px + 1.5rem);
+    padding-right: 1.5rem;
   }
 }

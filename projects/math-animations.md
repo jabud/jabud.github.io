@@ -2,9 +2,12 @@
 title: Math animations
 description: Animaciones de objetos matemáticos, ecuaciones y su comportamiento.
 date: 2019-04-13
-repo: https://github.com/jabud/math_animations
 featured: true
 categories: ["python", "visualización"]
+code-links:
+  - text: Código
+    href: https://github.com/jabud/math_animations
+    icon: github
 ---
 
 Proyecto para visualizar objetos matemáticos y el comportamiento de ecuaciones

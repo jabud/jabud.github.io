@@ -2,10 +2,16 @@
 title: Generador de CV en PDF
 description: Generador de CV en PDF desde el navegador, con opción de usarlo de forma local.
 date: 2026-09-02
-repo: https://github.com/jabud/generador-cv
-link: https://cv-generator-5u6c.onrender.com/
 featured: true
 categories: ["python", "app"]
+code-links:
+  - text: Código
+    href: https://github.com/jabud/generador-cv
+    icon: github
+other-links:
+  - text: Ver el sitio
+    href: https://cv-generator-5u6c.onrender.com/
+    icon: box-arrow-up-right
 ---
 
 Cada que quería actualizar mi CV buscaba distintas fuentes y formas de hacerlo. Este proyecto es mi forma de ponerlo en un solo lugar y que sea muy práctico actualizar y tener una nueva versión lista para usarse.    
