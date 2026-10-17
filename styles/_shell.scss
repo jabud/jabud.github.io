@@ -101,6 +101,17 @@ main.content {
   font-size: 18px;
   vertical-align: -0.15em;
 }
+// Los SVG que js/shell.html pone en lugar de los iconos de Bootstrap
+.sidebar-navigation .nav-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.sidebar-navigation .sidebar-item-text {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
 
 // Botón de colapsar, anclado al pie del menú
 .collapse-btn {
@@ -236,6 +247,8 @@ div.quarto-post.image-right {
 
   a {
     color: $body-color;
+    // Bootstrap pone 400 en el enlace y se come la negrita del h3
+    font-weight: 600;
     &:hover {
       text-decoration: none;
     }
