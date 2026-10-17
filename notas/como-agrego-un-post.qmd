@@ -43,5 +43,41 @@ subirla, la nota se publica con los resultados viejos.
 Gracias a ese mismo `_freeze`, el código solo se vuelve a ejecutar cuando lo
 modifico; corregir una falta de ortografía no dispara el cálculo de nuevo.
 
-Un notebook de Jupyter (`.ipynb`) se puede dejar tal cual en `notas/` y aparece
-publicado como una página más, sin convertirlo a nada.
+## Si ya tengo un notebook de Jupyter
+
+No hay que convertirlo: el `.ipynb` se copia tal cual a `notas/` y se publica como
+una página más. Solo falta decirle a Quarto el título y los datos de la nota, y eso
+se hace **dentro del propio notebook**:
+
+1. Abre el notebook y crea una celda nueva hasta arriba del todo.
+2. Cambia su tipo de *Code* a **Raw** (en Jupyter Lab, el desplegable de la barra
+   de herramientas; en VS Code, "Raw" en la esquina de la celda). Es importante:
+   si queda como Markdown, el bloque se publica como texto a la vista.
+3. Escribe ahí el frontmatter, con los mismos guiones que en un `.qmd`:
+
+   ```
+   ---
+   title: Mi análisis
+   description: Una línea de resumen.
+   date: 2026-10-16
+   categories: ["python"]
+   ---
+   ```
+
+### El detalle que se olvida: las salidas
+
+A diferencia de un `.qmd`, **Quarto no ejecuta el notebook**: publica las salidas
+que el archivo ya trae guardadas. Es decir, lo que se ve en el sitio es lo que
+quedó guardado la última vez que lo corrí en Jupyter.
+
+En la práctica: ejecuta el notebook completo, guárdalo, y recién entonces haz
+commit. Si lo subo sin ejecutar, la nota se publica con el código pero sin ninguna
+gráfica ni tabla debajo.
+
+Si prefiero que Quarto lo ejecute al compilar, como hace con los `.qmd`, va esto
+en el frontmatter raw:
+
+```
+execute:
+  enabled: true
+```
