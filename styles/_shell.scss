@@ -410,6 +410,12 @@ div.quarto-post.image-right {
   text-transform: none;
 }
 
+// La descripción del frontmatter alimenta los listados y la etiqueta meta de
+// la página; dentro del post repetiría lo que ya dice la caja del listado.
+#title-block-header .description {
+  display: none;
+}
+
 // Bloque de metadatos bajo el título de una nota: discreto, sin el encabezado
 // "FECHA DE PUBLICACIÓN" en versalitas que Quarto pone por defecto.
 .quarto-title-meta {
@@ -599,7 +605,9 @@ footer.footer .nav-footer {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 1rem;
+    // Aire suficiente para que se lean como parte del encabezado y no como
+    // algo encajado entre la fecha y el primer párrafo.
+    margin: 1.75rem 0 0.5rem;
 
     h2,
     .h2 {
