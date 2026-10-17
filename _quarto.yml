@@ -25,6 +25,9 @@ website:
   navbar:
     title: "~"
     href: index.md
+    # La barra no se va con el scroll: el shell se queda quieto y solo se
+    # desplaza el texto, como en el sitio original.
+    pinned: true
     right:
       - text: contexto
         href: contexto.md
