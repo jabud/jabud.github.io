@@ -1,22 +1,47 @@
 ---
 title: Cómo agrego una nota a este sitio
-description: Guía rápida para mí mismo — el flujo para publicar una nota nueva.
-date: 2026-07-18
-draft: true
-categories: ["meta"]
+description: Guía rápida para mí mismo — el flujo para publicar una nota nueva, con o sin código que se ejecute.
+date: 2026-10-16
+categories: ["meta", "quarto"]
 ---
 
 Nota para mi yo del futuro. Para publicar algo nuevo:
 
-1. Crea un archivo `.md` dentro de `src/content/notas/`. El nombre del archivo
-   será la URL (ej. `mi-idea.md` → `/notas/mi-idea/`).
-2. Copia el bloque de *frontmatter* de otro post y ajústalo:
+1. Crea un archivo `.qmd` dentro de `notas/`. El nombre del archivo será la URL
+   (ej. `mi-idea.qmd` → `/notas/mi-idea.html`).
+2. Copia el bloque de *frontmatter* de otra nota y ajústalo:
    - `title`: el título.
    - `description`: una línea de resumen (aparece en el listado).
-   - `pubDate`: la fecha (`AAAA-MM-DD`).
-   - `tags`: etiquetas opcionales.
+   - `date`: la fecha (`AAAA-MM-DD`).
+   - `categories`: etiquetas opcionales. Alimentan las píldoras con contador de
+     la portada y de cada sección, así que conviene reutilizar las que ya existen.
 3. Escribe el contenido en Markdown debajo del bloque.
-4. Guarda, revisa en local con `npm run dev`, y haz `git push`. GitHub Pages
-   publica solo.
+4. Revisa en local con `quarto preview`, que se recarga solo al guardar.
+5. Haz `git push`. Al llegar a `master`, GitHub Pages publica solo.
 
 > ¿Aún no está listo? Pon `draft: true` en el frontmatter y no se publicará.
+
+Las reseñas y los proyectos funcionan igual, en sus carpetas `resenas/` y
+`projects/`. Una reseña admite además `author` y `rating`; un proyecto, `repo`,
+`link` y `featured`.
+
+## Si la nota lleva código
+
+Esta es la razón por la que el sitio usa Quarto: el código no se pega como captura,
+se ejecuta al publicar.
+
+1. Agrega `jupyter: python3` al frontmatter.
+2. Escribe las celdas entre ```` ```{python} ```` y ```` ``` ````.
+3. Activa el ambiente antes de previsualizar, para que Quarto encuentre Jupyter:
+   `conda activate quarto-site`.
+
+Al renderizar, las salidas quedan guardadas en la carpeta `_freeze/`. **Hay que
+hacer commit de esa carpeta junto con la nota**: así el servidor que publica el
+sitio no necesita instalar Python, solo reutiliza lo ya calculado. Si olvido
+subirla, la nota se publica con los resultados viejos.
+
+Gracias a ese mismo `_freeze`, el código solo se vuelve a ejecutar cuando lo
+modifico; corregir una falta de ortografía no dispara el cálculo de nuevo.
+
+Un notebook de Jupyter (`.ipynb`) se puede dejar tal cual en `notas/` y aparece
+publicado como una página más, sin convertirlo a nada.
