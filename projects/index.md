@@ -1,12 +1,14 @@
 ---
-title: reseñas
+title: proyectos
 toc: false
 listing:
-  contents: "*.qmd"
+  contents: "*.md"
+  exclude:
+    draft: true
   sort: "date desc"
   type: default
   categories: numbered
   sort-ui: false
   filter-ui: false
-  fields: [title, date, author, description]
+  fields: [title, description]
 ---

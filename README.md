@@ -26,21 +26,21 @@ estética de terminal, contenido en Markdown y notas que pueden **ejecutar códi
 
 | Sección | Ruta | De dónde sale |
 |---|---|---|
-| Home | `/` | `index.qmd` (notas, reseñas y proyectos recientes) |
-| Notas | `/notas` | `notas/*.qmd` |
-| Reseñas | `/resenas` | `resenas/*.qmd` |
-| Proyectos | `/projects` | `projects/*.qmd` |
-| Contexto | `/contexto` | `contexto.qmd` |
-| CV | `/cv.pdf` | `cv.pdf` |
+| Home | `/` | `index.md` (notas, reseñas y proyectos recientes) |
+| Notas | `/notas` | `notas/*.md` |
+| Reseñas | `/resenas` | `resenas/*.md` |
+| Proyectos | `/projects` | `projects/*.md` |
+| Contexto | `/contexto` | `contexto.md` |
+| CV | `/assets/cv.pdf` | `assets/cv.pdf` |
 
 ## Estructura del proyecto
 
 ```
 .
 ├── _quarto.yml            # config del sitio: menú, temas, pie de página
-├── index.qmd              # home
-├── contexto.qmd           # about
-├── notas/                 # 📝 index.qmd (listado) + una nota por archivo
+├── index.md               # home
+├── contexto.md            # about
+├── notas/                 # 📝 index.md (listado) + una nota por archivo
 ├── resenas/
 ├── projects/
 ├── styles/
@@ -48,7 +48,8 @@ estética de terminal, contenido en Markdown y notas que pueden **ejecutar códi
 │   ├── terminal-light.scss
 │   └── terminal-dark.scss
 ├── _freeze/               # salidas del código ya ejecutado (se versiona)
-├── cv.pdf
+├── js/shell.html          # ruta ~/..., menú colapsable, filtro de la home
+├── assets/cv.pdf
 ├── favicon.svg
 ├── docs/ROADMAP.md
 └── .github/workflows/deploy.yml
@@ -70,21 +71,22 @@ Si una nota no tiene celdas de código, Quarto no necesita Python en absoluto.
 
 ## Cómo agregar contenido
 
-Todo el contenido son archivos `.qmd`, que son Markdown con un bloque de *frontmatter*
-arriba. Para crear algo nuevo, copia el bloque de un archivo existente y edítalo.
+El contenido son archivos Markdown (`.md`) con un bloque de *frontmatter* arriba.
+Para crear algo nuevo, copia el bloque de un archivo existente y edítalo. Solo las
+notas que ejecutan código usan la extensión `.qmd`.
 
-- **Nota:** nuevo `.qmd` en `notas/`. El nombre del archivo es la URL
-  (`mi-idea.qmd` → `/notas/mi-idea.html`). Frontmatter: `title`, `description`,
+- **Nota:** nuevo `.md` en `notas/`. El nombre del archivo es la URL
+  (`mi-idea.md` → `/notas/mi-idea.html`). Frontmatter: `title`, `description`,
   `date`, `categories`, `draft?`.
-- **Reseña:** nuevo `.qmd` en `resenas/`. Igual que una nota, más `author?` y
+- **Reseña:** nuevo `.md` en `resenas/`. Igual que una nota, más `author?` y
   `rating?` (0–5).
-- **Proyecto:** nuevo `.qmd` en `projects/`. Frontmatter: `title`, `description`,
+- **Proyecto:** nuevo `.md` en `projects/`. Frontmatter: `title`, `description`,
   `date`, `repo?`, `link?`, `categories`, `featured?`.
 
 `draft: true` deja una entrada sin publicar.
 
-Para que una nota ejecute código, se agrega `jupyter: python3` al frontmatter y se
-escriben las celdas entre ```` ```{python} ```` y ```` ``` ````. Ver
+Para que una nota ejecute código hay que guardarla como `.qmd`, agregar
+`jupyter: python3` al frontmatter y escribir las celdas entre ```` ```{python} ```` y ```` ``` ````. Ver
 [`notas/demo-ejecutable.qmd`](notas/demo-ejecutable.qmd).
 
 ## Deploy a producción

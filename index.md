@@ -7,24 +7,31 @@ listing:
   # basta para tener un filtro global con el conteo de todo el sitio.
   - id: notas-recientes
     contents:
+      - notas/*.md
       - notas/*.qmd
       - notas/*.ipynb
-      - "!notas/index.qmd"
+      - "!notas/index.md"
+    exclude:
+      draft: true
     sort: "date desc"
     type: default
     categories: numbered
     fields: [title, date, description]
   - id: resenas-recientes
     contents:
-      - resenas/*.qmd
-      - "!resenas/index.qmd"
+      - resenas/*.md
+      - "!resenas/index.md"
+    exclude:
+      draft: true
     sort: "date desc"
     type: default
     fields: [title, date, author, description]
   - id: proyectos-destacados
     contents:
-      - projects/*.qmd
-      - "!projects/index.qmd"
+      - projects/*.md
+      - "!projects/index.md"
+    exclude:
+      draft: true
     sort: "date desc"
     type: default
     fields: [title, description]

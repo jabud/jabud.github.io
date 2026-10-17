@@ -7,8 +7,8 @@ categories: ["meta", "quarto"]
 
 Nota para mi yo del futuro. Para publicar algo nuevo:
 
-1. Crea un archivo `.qmd` dentro de `notas/`. El nombre del archivo será la URL
-   (ej. `mi-idea.qmd` → `/notas/mi-idea.html`).
+1. Crea un archivo `.md` dentro de `notas/`. El nombre del archivo será la URL
+   (ej. `mi-idea.md` → `/notas/mi-idea.html`).
 2. Copia el bloque de *frontmatter* de otra nota y ajústalo:
    - `title`: el título.
    - `description`: una línea de resumen (aparece en el listado).
@@ -29,6 +29,10 @@ Las reseñas y los proyectos funcionan igual, en sus carpetas `resenas/` y
 
 Esta es la razón por la que el sitio usa Quarto: el código no se pega como captura,
 se ejecuta al publicar.
+
+Aquí sí cambia la extensión: **la nota tiene que ser `.qmd` en vez de `.md`**. Es la
+única diferencia entre ambas — un `.md` es texto y ya, un `.qmd` además puede
+ejecutar celdas.
 
 1. Agrega `jupyter: python3` al frontmatter.
 2. Escribe las celdas entre ```` ```{python} ```` y ```` ``` ````.

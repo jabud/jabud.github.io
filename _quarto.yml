@@ -2,11 +2,14 @@ project:
   type: website
   output-dir: _site
   render:
-    - index.qmd
-    - contexto.qmd
+    - index.md
+    - contexto.md
     - notas/
     - resenas/
     - projects/
+    # README y docs/ no son páginas del sitio
+    - "!README.md"
+    - "!docs/"
   resources:
     - assets/
 
@@ -21,22 +24,22 @@ website:
   search: false
   navbar:
     title: "~"
-    href: index.qmd
+    href: index.md
     right:
       - text: contexto
-        href: contexto.qmd
+        href: contexto.md
   sidebar:
     style: docked
     contents:
       - text: notas
         icon: file-text
-        href: notas/index.qmd
+        href: notas/index.md
       - text: reseñas
         icon: book
-        href: resenas/index.qmd
+        href: resenas/index.md
       - text: proyectos
         icon: folder
-        href: projects/index.qmd
+        href: projects/index.md
   page-footer:
     left: "© 2026 Resoluble"
     right:
