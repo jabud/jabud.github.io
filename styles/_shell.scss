@@ -586,3 +586,49 @@ footer.footer .nav-footer {
     padding-right: 1.5rem;
   }
 }
+
+// Copia de los enlaces de un proyecto (código / sitio) para pantallas
+// estrechas: los originales viven en la columna del margen, que Quarto
+// esconde en móvil. Se pintan como los botones del sitio original.
+.project-links-inline {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .project-links-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+
+    h2,
+    .h2 {
+      display: none;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: $body-color;
+      text-decoration: none;
+
+      &:hover {
+        border-color: $hover-border;
+        background: $hover-bg;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -206,8 +206,28 @@
       });
   };
 
+  // ------------------------------------------------------------------
+  // 5. Enlaces del proyecto (código / sitio) también en móvil
+  // ------------------------------------------------------------------
+  // Quarto los pone en la columna del margen, que esconde en pantalla
+  // estrecha. Se copian bajo el título; el CSS decide cuál de las dos
+  // versiones se ve, así no hay nada que rehacer al girar el teléfono.
+  const inlineProjectLinks = () => {
+    const blocks = document.querySelectorAll(
+      "#quarto-margin-sidebar .quarto-other-links, #quarto-margin-sidebar .quarto-code-links"
+    );
+    const header = document.querySelector("#title-block-header");
+    if (!blocks.length || !header) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "project-links-inline";
+    blocks.forEach((block) => wrap.append(block.cloneNode(true)));
+    header.append(wrap);
+  };
+
   useAstroIcons();
   markActiveSection();
+  inlineProjectLinks();
   buildBreadcrumb();
   setupSidebarToggle();
   watchCategoryFilter();
