@@ -23,3 +23,8 @@ pnpm-debug.log*
 # legacy Jekyll
 */_site/*
 .obsidian/
+
+# Quarto (exploracion en rama explore-quarto-template)
+_site/
+.quarto/
+*.quarto_ipynb
