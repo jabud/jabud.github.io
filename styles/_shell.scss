@@ -337,15 +337,19 @@ div.quarto-post.image-right {
 // ---------------------------------------------------------------
 // Tabla de contenidos
 // ---------------------------------------------------------------
-// La línea vertical que separa la tabla de contenidos del texto
-#TOC {
+// La línea vertical que separa la tabla de contenidos del texto. Va en la
+// columna, no en el #TOC: así recorre todo el alto de la pantalla en vez de
+// terminar donde acaba la lista, y al ser sticky acompaña el scroll.
+// Solo donde hay tabla de contenidos: en los listados esta misma columna
+// aloja las categorías y ahí la línea sobra.
+#quarto-margin-sidebar:has(#TOC) {
   border-left: 1px solid $border-color;
   padding-left: 1.5rem;
+}
 
-  // Subsecciones (h3) sangradas bajo su sección
-  ul ul .nav-link {
-    padding-left: 0.9rem;
-  }
+// Subsecciones (h3) sangradas bajo su sección
+#TOC ul ul .nav-link {
+  padding-left: 0.9rem;
 }
 
 #quarto-margin-sidebar {

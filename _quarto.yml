@@ -59,7 +59,7 @@ format:
       light: [cosmo, styles/terminal-light.scss]
       dark: [cosmo, styles/terminal-dark.scss]
     toc: true
-    toc-title: "En esta página"
+    toc-title: "Contenido"
     toc-depth: 3
     # Sin esto el TOC solo despliega la sección activa y los h3 quedan ocultos.
     toc-expand: true
